@@ -1,0 +1,59 @@
+/*
+ * ADMIN_SankouBookColorControllerAdvice.java
+ * Project : spring_javase11_study
+ * Package : com.javastudy.components.sankou_book_color.internal
+ * Author  : shu-kundeath
+ * Created : 2025/11/07 18:13:18
+ *
+ * 目的:
+ * - TODO
+ *
+ * 注意:
+ * - 定数/文字列の扱いは規約に従う（文字列は private static final String）
+ */
+
+package com.javastudy.components.sankou_book_color.internal;
+
+import org.springframework.core.annotation.Order;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.javastudy.util.param.prop_key.PropKey;
+import com.util.security.role.RoleUtil;
+import com.util.type.MyType;
+
+import jakarta.servlet.http.HttpSession;
+import lombok.AllArgsConstructor;
+
+@ControllerAdvice(assignableTypes = {
+	ADMIN_SankouBookColorController.class
+})
+@Order(20)
+@PreAuthorize(RoleUtil.HAS_ROLE_ADMIN)
+@Component
+@AllArgsConstructor
+public class ADMIN_SankouBookColorControllerAdvice {
+	private final ADMIN_SankouBookColorFormValidator validator;
+
+	/** ADMIN color 用の Validator を適用。 */
+	@InitBinder(SankouBookColorFormParam.FORM)
+	public void initBinder(final WebDataBinder binder) {
+		binder.addValidators(this.validator);
+	}
+
+	/** Sticky な ERROR_MESSAGE の復元。 */
+	@ModelAttribute
+	public void restoreStickyError(final Model model, final HttpSession session) {
+		if (model.containsAttribute(PropKey.ERROR_MESSAGE))
+			return;
+		final Object sticky = session.getAttribute(PropKey.ERROR_MESSAGE);
+		if (sticky instanceof final String s && MyType.isNotBlank(s)) {
+			model.addAttribute(PropKey.ERROR_MESSAGE, s);
+		}
+	}
+}

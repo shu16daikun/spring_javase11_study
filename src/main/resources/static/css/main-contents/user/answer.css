@@ -1,0 +1,97 @@
+/* ボタン行：上下余白は親で保持（状態変化の影響を受けない） */
+.btn-area {
+	display: flex;
+	gap: var(--spacer-2);
+	max-width: var(--max-width-md);
+	padding-block: var(--spacer-3);
+}
+
+.btn-area .my-btn-primary,
+.btn-area .my-btn-success {
+	flex: 1 1 0;
+	width: auto;
+	/* 100%強制を打ち消し */
+	text-align: center;
+	margin: 0;
+	/* 余白は親に任せる */
+}
+
+/* 状態変化でも margin をいじらせない（外部CSSの強い指定対策） */
+.btn-area .my-btn-primary:focus,
+.btn-area .my-btn-primary:active,
+.btn-area .my-btn-success:focus,
+.btn-area .my-btn-success:active {
+	margin: 0;
+}
+
+/* 1問＝1行のグリッド。列を明示して“左幅”を統一 */
+.my-btn-group-horizontal {
+	--col-title: 6rem;
+	/* 「問◯」の幅 */
+	--col-opt: 5;
+	/* 選択肢列の個数 (A..Eなら5) */
+	--col-unknown: 8rem;
+	/* 「わからない」列の幅 */
+
+	display: grid;
+	grid-template-columns:
+		var(--col-title) repeat(var(--col-opt), minmax(6rem, 1fr)) var(--col-unknown);
+	column-gap: var(--spacer-2);
+	row-gap: var(--spacer-2);
+	align-items: stretch;
+}
+
+/* 各セルの割り当て */
+.my-btn-option-title {
+	grid-column: 1;
+	/* 左端の固定列 */
+	display: flex;
+	align-items: center;
+}
+
+.my-btn-option {
+	/* A..E のセル（DOM順で 2..(1+--col-opt) に並ぶ） */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.my-btn-option.is-unknown {
+	grid-column: calc(2 + var(--col-opt));
+	/* 最終列に配置 */
+}
+
+/* セルいっぱいをクリック可能にする（必要なら） */
+.my-btn-option input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+}
+
+.my-btn-option label {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 0.6rem 0.8rem;
+	border: 1px solid var(--border, #ddd);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.my-btn-option input:checked+label {
+	border-color: var(--accent, #0a7);
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent, #0a7) 25%, transparent);
+}
+
+/* モバイルは2列に崩す（タイトルと「わからない」は横幅全取り） */
+@media (max-width: 680px) {
+	.my-btn-group-horizontal {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.my-btn-option-title,
+	.my-btn-option.is-unknown {
+		grid-column: 1 / -1;
+	}
+}

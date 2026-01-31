@@ -1,0 +1,23 @@
+<!-- ユーザー：ブラウザ戻る／進む／リロード検知モーダル -->
+<div id="userBrowserNavModal" class="my-modal my-modal-dark" th:fragment="user-browser-guard">
+	<div class="my-modal-contents" role="dialog" aria-modal="true" aria-labelledby="userBrowserNavModalTitle">
+		<div class="my-modal-dialog">
+			<div class="my-modal-content">
+				<header class="my-modal-header">
+					<h2 id="userBrowserNavModalTitle" class="my-modal-title">
+						画面の再表示について
+					</h2>
+				</header>
+				<div class="my-modal-body">
+					<p>不正な処理が行われました。</p>
+					<p>ユーザー画面トップから操作をやり直してください。</p>
+				</div>
+				<footer class="my-modal-footer">
+					<a th:href="@{/user}" class="my-btn-dark">
+						ユーザー画面トップへ
+					</a>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>

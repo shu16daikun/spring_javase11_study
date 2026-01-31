@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{login/common :: login-header('エラー画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/css/main-contents/login/error.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/signin.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/body.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/alert.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/card.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/login/error/controller.js}"></script>
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<main class="my-form-signin">
+		<!-- card -->
+		<div class="card-area">
+			<div class="my-row-cols-responsive-max-2">
+				<div class="my-card">
+					<div class="my-card-body">
+						<div th:if="${status != null}" class="my-alert-danger" th:data-text="${'ステータス：　 ' + status}">
+						</div>
+						<div th:if="${errorCode != null}" class="my-alert-danger"
+							th:data-text="${'エラーコード： ' + errorCode}"></div>
+						<div th:if="${errorMessage != null}" class="my-alert-danger" th:data-text="${errorMessage}">
+						</div>
+						<!-- エラー相関ID（画面に出しておくと問い合わせ・抽出のキーになる） -->
+						<div th:if="${traceId != null}" class="my-alert-primary" th:data-text="${'トレースID： ' + traceId}">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- buttens -->
+		<div class="btn-area">
+			<a th:href="@{/login}" class="my-btn-secondary">ログイン画面に戻る</a>
+			<!-- このエラーに紐づくログをCSVでダウンロード -->
+			<a class="my-btn-primary" th:if="${traceId != null}" th:href="@{/login/error/logs(traceId=${traceId})}">
+				このエラーのログをCSVで保存
+			</a>
+		</div>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{login/browser-guard :: login-browser-guard}"></div>
+	<!-- body要素ここまで -->
+</body>
+
+</html>

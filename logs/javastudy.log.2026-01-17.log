@@ -1,0 +1,246 @@
+2026-01-17T21:14:49.058+09:00 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-17T21:14:49.150+09:00 INFO  [restartedMain] c.j.SpringJavase11StudyApplication - Starting SpringJavase11StudyApplication using Java 21.0.8 with PID 92708 (/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes started by shu-kundeath in /Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study)
+2026-01-17T21:14:49.151+09:00 INFO  [restartedMain] c.j.SpringJavase11StudyApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-17T21:14:49.222+09:00 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-17T21:14:49.222+09:00 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-17T21:14:50.917+09:00 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-17T21:14:51.149+09:00 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 220 ms. Found 9 JPA repository interfaces.
+2026-01-17T21:14:52.595+09:00 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-17T21:14:52.613+09:00 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-17T21:14:52.616+09:00 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-17T21:14:52.617+09:00 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-01-17T21:14:52.676+09:00 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-17T21:14:52.676+09:00 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3453 ms
+2026-01-17T21:14:52.921+09:00 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-17T21:14:52.983+09:00 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-01-17T21:14:53.033+09:00 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-17T21:14:53.393+09:00 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-17T21:14:53.441+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-17T21:14:53.596+09:00 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1dde243e
+2026-01-17T21:14:53.598+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-17T21:14:53.796+09:00 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.19
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-17T21:14:54.938+09:00 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-17T21:14:54.943+09:00 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-17T21:14:55.361+09:00 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-17T21:14:57.040+09:00 WARN  [restartedMain] o.s.aop.framework.CglibAopProxy - Unable to proxy interface-implementing method [public final boolean com.login.components.user.internal.MyUsersServiceImpl.isUse(java.lang.String)] because it is marked as final, consider using interface-based JDK proxies instead.
+2026-01-17T21:14:57.611+09:00 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ADMIN_AnswerRecordsController' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/ADMIN_AnswerRecordsController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'answerRecordsServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/AnswerRecordsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 6: Error creating bean with name 'attemptSessionServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/AttemptSessionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 4: Error creating bean with name 'toUSER_AttemptSessionViewDtoMapper' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/ToUSER_AttemptSessionViewDtoMapper.class]: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+2026-01-17T21:14:57.613+09:00 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-17T21:14:57.619+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-17T21:14:57.623+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-17T21:14:57.627+09:00 INFO  [restartedMain] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-17T21:14:57.646+09:00 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-17T21:14:57.685+09:00 ERROR [restartedMain] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ADMIN_AnswerRecordsController' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/ADMIN_AnswerRecordsController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'answerRecordsServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/AnswerRecordsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 6: Error creating bean with name 'attemptSessionServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/AttemptSessionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 4: Error creating bean with name 'toUSER_AttemptSessionViewDtoMapper' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/ToUSER_AttemptSessionViewDtoMapper.class]: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.javastudy.SpringJavase11StudyApplication.main(SpringJavase11StudyApplication.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'answerRecordsServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/AnswerRecordsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 6: Error creating bean with name 'attemptSessionServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/AttemptSessionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 4: Error creating bean with name 'toUSER_AttemptSessionViewDtoMapper' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/ToUSER_AttemptSessionViewDtoMapper.class]: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attemptSessionServiceImpl' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/AttemptSessionServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 4: Error creating bean with name 'toUSER_AttemptSessionViewDtoMapper' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/ToUSER_AttemptSessionViewDtoMapper.class]: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'toUSER_AttemptSessionViewDtoMapper' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/attempt_session/internal/ToUSER_AttemptSessionViewDtoMapper.class]: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:614)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 52 common frames omitted
+Caused by: org.springframework.aop.framework.AopConfigException: Could not generate CGLIB subclass of class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.aop.framework.CglibAopProxy.buildProxy(CglibAopProxy.java:238)
+	at org.springframework.aop.framework.CglibAopProxy.getProxy(CglibAopProxy.java:168)
+	at org.springframework.aop.framework.ProxyFactory.getProxy(ProxyFactory.java:110)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.buildProxy(AbstractAutoProxyCreator.java:518)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.createProxy(AbstractAutoProxyCreator.java:465)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:370)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:319)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1829)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot subclass final class com.javastudy.components.attempt_session.internal.ToUSER_AttemptSessionViewDtoMapper
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:653)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:76)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:370)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:133)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:321)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.aop.framework.ObjenesisCglibAopProxy.createProxyClassAndInstance(ObjenesisCglibAopProxy.java:62)
+	at org.springframework.aop.framework.CglibAopProxy.buildProxy(CglibAopProxy.java:229)
+	... 71 common frames omitted
+2026-01-17T21:22:06.339+09:00 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-17T21:22:06.402+09:00 INFO  [restartedMain] c.j.SpringJavase11StudyApplication - Starting SpringJavase11StudyApplication using Java 21.0.8 with PID 92834 (/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes started by shu-kundeath in /Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study)
+2026-01-17T21:22:06.403+09:00 INFO  [restartedMain] c.j.SpringJavase11StudyApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-17T21:22:06.460+09:00 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-17T21:22:06.460+09:00 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-17T21:22:07.397+09:00 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-17T21:22:07.555+09:00 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 9 JPA repository interfaces.
+2026-01-17T21:22:08.558+09:00 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-17T21:22:08.574+09:00 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-17T21:22:08.576+09:00 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-17T21:22:08.577+09:00 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-01-17T21:22:08.623+09:00 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-17T21:22:08.623+09:00 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2162 ms
+2026-01-17T21:22:08.818+09:00 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-17T21:22:08.878+09:00 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-01-17T21:22:08.917+09:00 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-17T21:22:09.230+09:00 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-17T21:22:09.267+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-17T21:22:09.383+09:00 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@10e9acff
+2026-01-17T21:22:09.385+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-17T21:22:09.461+09:00 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.19
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-17T21:22:10.500+09:00 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-17T21:22:10.505+09:00 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-17T21:22:10.848+09:00 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-17T21:22:12.369+09:00 WARN  [restartedMain] o.s.aop.framework.CglibAopProxy - Unable to proxy interface-implementing method [public final boolean com.login.components.user.internal.MyUsersServiceImpl.isUse(java.lang.String)] because it is marked as final, consider using interface-based JDK proxies instead.
+2026-01-17T21:22:12.987+09:00 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'USER_AnswerRecordsControllerAdvice' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/USER_AnswerRecordsControllerAdvice.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'USER_AnswerRecordsFormListValidator' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/USER_AnswerRecordsFormListValidator.class]: Could not generate CGLIB subclass of class com.javastudy.components.answer_records.internal.USER_AnswerRecordsFormListValidator: Common causes of this problem include using a final class or a non-visible class
+2026-01-17T21:22:12.988+09:00 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-17T21:22:12.994+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-17T21:22:12.998+09:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-17T21:22:13.003+09:00 INFO  [restartedMain] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-17T21:22:13.020+09:00 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-17T21:22:13.044+09:00 ERROR [restartedMain] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'USER_AnswerRecordsControllerAdvice' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/USER_AnswerRecordsControllerAdvice.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'USER_AnswerRecordsFormListValidator' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/USER_AnswerRecordsFormListValidator.class]: Could not generate CGLIB subclass of class com.javastudy.components.answer_records.internal.USER_AnswerRecordsFormListValidator: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.javastudy.SpringJavase11StudyApplication.main(SpringJavase11StudyApplication.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'USER_AnswerRecordsFormListValidator' defined in file [/Applications/Eclipse_2023-12.app/Contents/workspace/JAVA_STUDY_NEW/spring_javase11_study/target/classes/com/javastudy/components/answer_records/internal/USER_AnswerRecordsFormListValidator.class]: Could not generate CGLIB subclass of class com.javastudy.components.answer_records.internal.USER_AnswerRecordsFormListValidator: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:614)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 24 common frames omitted
+Caused by: org.springframework.aop.framework.AopConfigException: Could not generate CGLIB subclass of class com.javastudy.components.answer_records.internal.USER_AnswerRecordsFormListValidator: Common causes of this problem include using a final class or a non-visible class
+	at org.springframework.aop.framework.CglibAopProxy.buildProxy(CglibAopProxy.java:238)
+	at org.springframework.aop.framework.CglibAopProxy.getProxy(CglibAopProxy.java:168)
+	at org.springframework.aop.framework.ProxyFactory.getProxy(ProxyFactory.java:110)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.buildProxy(AbstractAutoProxyCreator.java:518)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.createProxy(AbstractAutoProxyCreator.java:465)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:370)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:319)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1829)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	... 34 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot subclass final class com.javastudy.components.answer_records.internal.USER_AnswerRecordsFormListValidator
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:653)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:76)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:370)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:133)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:321)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.aop.framework.ObjenesisCglibAopProxy.createProxyClassAndInstance(ObjenesisCglibAopProxy.java:62)
+	at org.springframework.aop.framework.CglibAopProxy.buildProxy(CglibAopProxy.java:229)
+	... 43 common frames omitted

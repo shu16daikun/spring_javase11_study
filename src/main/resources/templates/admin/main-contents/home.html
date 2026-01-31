@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{admin/common :: admin-header('管理者_ホーム画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/colorTheme.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/buttons.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/breadcrump.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/alert.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/rowCols.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/card.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/admin/home/controller.js}"></script>
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<!-- navbar -->
+	<div th:replace="~{admin/navbar :: admin-navbar}"></div>
+	<!-- main-contents -->
+	<main class="my-container">
+		<!-- breadcrump -->
+		<div class="my-breadcrump-simple">
+			<nav>
+				<ol>
+					<li>ホーム</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- alert -->
+		<div class="alert-area" th:if="${errorMessage != null}">
+			<div th:if="${alertDanger}" class="my-alert-danger" th:data-text="${errorMessage}"></div>
+			<div th:if="${alertWarning}" class="my-alert-warning" th:data-text="${errorMessage}"></div>
+			<div th:if="${alertPrimary}" class="my-alert-primary" th:data-text="${errorMessage}"></div>
+		</div>
+
+		<!-- card -->
+		<div class="card-area">
+			<div class="my-row-cols-responsive-max-4">
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-pink"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">権限TBL設定</div>
+						<p>権限TBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/authority}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-orange"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">ユーザーTBL設定</div>
+						<p>ユーザーTBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/users}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-kime"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">参考書カラーTBL設定</div>
+						<p>参考書カラーTBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/sankouBookColor}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-teal"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">参考書TBL設定</div>
+						<p>参考書TBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/sankouBooks}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-cyan"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">章TBL設定</div>
+						<p>章TBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/chapter}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-indigo"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">黒本問題TBL設定</div>
+						<p>黒本問題TBLの情報を閲覧・追加・修正できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/kurohonQuestions}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-purple"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">解答セッションTBL設定</div>
+						<p>解答セッションTBLの情報を閲覧できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/attemptSession}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-warning"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">解答履歴TBL設定</div>
+						<p>解答履歴TBLの情報を閲覧できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/answerRecords}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-danger"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">苦手分析TBL設定</div>
+						<p>苦手分析TBLの情報を閲覧できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/admin/weakness}">詳細へ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- browser-guard -->
+	<div th:replace="~{admin/browser-guard :: admin-browser-guard}"></div>
+	<!-- footer -->
+	<div th:replace="~{admin/footer :: admin-footer}"></div>
+</body>
+<!-- body要素ここまで -->
+
+</html>

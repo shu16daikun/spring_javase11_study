@@ -1,0 +1,17 @@
+/* 右側にまとめて寄せる器 */
+.item-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	/* 子要素（stats-area / btn-area）を右端に寄せる */
+	gap: 16px;
+	margin-top: 16px;
+}
+
+
+/* モバイルはフル幅＆左寄せで自然に落とす */
+@media (max-width: 640px) {
+	.item-right {
+		align-items: stretch;
+	}
+}

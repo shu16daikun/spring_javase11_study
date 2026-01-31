@@ -1,0 +1,23 @@
+<!-- ログイン画面：ブラウザ戻る／進む／リロード検知モーダル -->
+<div id="loginBrowserNavModal" class="my-modal my-modal-dark" th:fragment="login-browser-guard">
+	<div class="my-modal-contents" role="dialog" aria-modal="true" aria-labelledby="loginBrowserNavModalTitle">
+		<div class="my-modal-dialog">
+			<div class="my-modal-content">
+				<header class="my-modal-header">
+					<h2 id="loginBrowserNavModalTitle" class="my-modal-title">
+						再ログインが必要です
+					</h2>
+				</header>
+				<div class="my-modal-body">
+					<p>不正な処理が行われました。</p>
+					<p>再ログインしてください。</p>
+				</div>
+				<footer class="my-modal-footer">
+					<a th:href="@{/login}" class="my-btn-primary">
+						ログイン画面へ
+					</a>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>

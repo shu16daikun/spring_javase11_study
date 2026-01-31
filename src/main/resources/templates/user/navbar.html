@@ -1,0 +1,72 @@
+<!-- 共通アイコン読み込み -->
+<div class="my-navbar-user" th:fragment="user-navbar">
+	<div th:replace="~{psfm/fragment/svg/icons :: svg-icons}"></div>
+	<nav>
+		<div class="my-container-fluid">
+			<a class="my-title" th:href="@{/user}">JavaSE11 資格勉強</a>
+			<!-- トグルボタン -->
+			<a class="my-navbar-toggler" aria-label="メニューを開く"></a>
+			<div class="my-offcanvas-user">
+				<!-- Offcanvas本体 -->
+				<div class="my-offcanvas">
+					<div class="my-offcanvas-header">
+						<span>メニュー</span>
+						<button class="my-offcanvas-close" aria-label="閉じる">&times;</button>
+					</div>
+					<div class="my-offcanvas-body">
+						<ul>
+							<!-- ★ アカウント設定：フォーム submit モード -->
+							<li
+								data-text="アカウント設定"
+								data-form-submit="#user-account-form"
+								th:data-href="@{/user/account/setting}">
+							</li>
+
+							<!-- ログアウトは従来どおりモーダル -->
+							<li data-text="ログアウト" data-modal="#logout-modal"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="navbar-spacer"></div>
+
+	<!-- ★ ここを /user/account/setting/browser-guard + POST に変更 -->
+	<form id="user-account-form"
+	      th:action="@{/user/account/setting/browser-guard}"
+	      method="post">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+		<!-- pageToken 使うなら -->
+		<input type="hidden" name="pageToken" th:value="${pageToken}" />
+	</form>
+
+	<form id="logout-form" th:action="@{/logout}" method="post">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	</form>
+
+	<!-- ログアウト確認モーダル（そのまま） -->
+	<div class="my-modal my-modal-dark" id="logout-modal">
+		<div class="my-modal-contents">
+			<div class="my-modal-dialog">
+				<div class="my-modal-content">
+					<div class="my-modal-header">
+						<h5 class="my-modal-title">ログアウト確認</h5>
+						<button type="button" class="my-btn-dark" data-dismiss>&times;</button>
+					</div>
+					<div class="my-modal-body">
+						<p>ログアウトしてよろしいですか？</p>
+					</div>
+					<div class="my-modal-footer">
+						<button type="button" class="my-btn-secondary" data-dismiss>
+							キャンセル
+						</button>
+						<button type="submit" class="my-btn-danger" data-submit-form="#logout-form">
+							ログアウト
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

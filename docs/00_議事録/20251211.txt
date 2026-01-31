@@ -1,0 +1,18 @@
+○各form画面への遷移を全てhrefからformに変更する
+　POST(/xx/browser-guard)→redirect →GET(/xx)
+
+それに伴う以下の修正
+・AppPath（/xx/browser-guardの追加）
+・Controller（post時の/xx/browser-guardの追加、各post時にredirect先へBrowserGuardCodeを送る処理、Get時のmodel検査の実施）
+・テンプレートの修正（th:href="/xx"→form th:action="/xx/browser-guard"への修正）
+
+POST時にredirect先へBrowserGuardCodeを送り、Get時にエラーがあれば各ホーム画面へ遷移（エラーメッセージつき）
+
+「フォーム画面に入る導線だけ、全部 POST /xx/browser-guard → redirect:/xx (GET) に揃える」
+
+「全POSTは必ずどこかへredirectし、そのredirect先にはBrowserGuardCodeをFlashで送る」
+
+「GET側はBrowserGuardCodeを検査し、不正ならホーム系に追い出してメッセージ表示」
+
+
+

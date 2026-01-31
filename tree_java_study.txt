@@ -1,0 +1,696 @@
+.
+├── .classpath
+├── .eclipse
+│   └── formatter
+│       └── eclipse-java-formatter.xml
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .mvn
+│   └── wrapper
+│       └── maven-wrapper.properties
+├── .prettierignore
+├── .prettierrc.json
+├── .project
+├── .settings
+│   ├── org.eclipse.core.resources.prefs
+│   ├── org.eclipse.jdt.core.prefs
+│   ├── org.eclipse.jdt.ui.prefs
+│   └── org.eclipse.m2e.core.prefs
+├── docs
+│   ├── 00_議事録
+│   │   ├── 20251013.txt
+│   │   ├── 20251015.txt
+│   │   └── 20251017.txt
+│   └── 01_UI
+│       ├── .DS_Store
+│       ├── 00_md
+│       │   ├── bk
+│       │   │   ├── コーディング規約_20251022.md
+│       │   │   ├── コーディング規約_20251023.md
+│       │   │   ├── コーディング規約_20251025.md
+│       │   │   ├── 基本規則_2025_10_18.md
+│       │   │   ├── 基本規則_20251012.md
+│       │   │   ├── 基本規則_20251013.md
+│       │   │   ├── 基本規則_20251016.md
+│       │   │   ├── 基本規則_20251017.md
+│       │   │   ├── 基本規則_20251019.md
+│       │   │   ├── 基本規則_20251021.md
+│       │   │   ├── 基本規則_20251022.md
+│       │   │   ├── 基本規則_20251023.md
+│       │   │   ├── 基本規則_20251024.md
+│       │   │   └── 基本規則_20251025.md
+│       │   ├── codetemplates.xml
+│       │   ├── Format関係（spotlessなど）運用ガイド.md
+│       │   ├── コーディング規約_20251026.md
+│       │   └── 基本規則_20251027.md
+│       ├── 01_基本設計
+│       │   ├── .DS_Store
+│       │   ├── 00_命名規則
+│       │   │   ├── ID命名規則.xlsx
+│       │   │   └── コンポーネント命名規則.xlsx
+│       │   ├── 01_DB関係
+│       │   │   ├── .DS_Store
+│       │   │   ├── ~$ER図.xlsx
+│       │   │   ├── 01_ER図
+│       │   │   │   └── ER図.xlsx
+│       │   │   └── 02_DB設計
+│       │   │       ├── .DS_Store
+│       │   │       └── DB設計.xlsx
+│       │   ├── 02_画面遷移図
+│       │   │   └── 画面遷移図.xlsx
+│       │   └── 03_機能設計
+│       │       ├── ~$機能設計.xlsx
+│       │       └── 機能設計.xlsx
+│       ├── 99_PDF
+│       │   ├── .DS_Store
+│       │   ├── bk
+│       │   │   ├── DB設計_20251006.pdf
+│       │   │   ├── DB設計_20251007.pdf
+│       │   │   ├── DB設計_20251016.pdf
+│       │   │   ├── ID命名規則_20251006.pdf
+│       │   │   ├── ID命名規則_20251007.pdf
+│       │   │   └── 機能設計_20251006.pdf
+│       │   ├── DB設計_20251023.pdf
+│       │   ├── ER図_20251006.pdf
+│       │   ├── ID命名規則_20251016.pdf
+│       │   ├── コンポーネント命名規則_20251006.pdf
+│       │   ├── 画面遷移図_20251006.pdf
+│       │   ├── 基本規則_20251006.pdf
+│       │   ├── 機能設計_20251007.pdf
+│       │   └── 苦手分析TBL_20261007.pdf
+│       └── 雛形.xlsx
+├── HELP.md
+├── logs
+│   ├── client-js.2025-11-04.log
+│   ├── client-js.2025-11-06.log
+│   ├── client-js.log
+│   ├── javastudy.log
+│   ├── javastudy.log.2025-10-26.0.gz
+│   ├── javastudy.log.2025-10-27.0.gz
+│   ├── javastudy.log.2025-10-28.0.gz
+│   ├── javastudy.log.2025-10-29.0.gz
+│   ├── javastudy.log.2025-10-30.0.gz
+│   ├── javastudy.log.2025-11-01.0.gz
+│   ├── javastudy.log.2025-11-02.log
+│   ├── javastudy.log.2025-11-04.log
+│   ├── javastudy.log.2025-11-06.log
+│   ├── my_login.log
+│   └── spring_javase11_study.log
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── javastudy
+│   │   │           ├── components
+│   │   │           │   ├── answer_records
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_AnswerRecordsViewDto.java
+│   │   │           │   │   │   │   ├── USER_AnswerRecordsInputDto.java
+│   │   │           │   │   │   │   ├── USER_AnswerRecordsStatsViewDto.java
+│   │   │           │   │   │   │   └── USER_AnswerRecordsViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── AnswerRecordsException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── AnswerRecordsObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       ├── AnswerRecordsRefLookUp.java
+│   │   │           │   │   │       └── AnswerRecordsService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_AnswerRecordsController.java
+│   │   │           │   │       ├── AnswerRecordsDB.java
+│   │   │           │   │       ├── AnswerRecordsEntity.java
+│   │   │           │   │       ├── AnswerRecordsErrorCode.java
+│   │   │           │   │       ├── AnswerRecordsFormParam.java
+│   │   │           │   │       ├── AnswerRecordsIdBridge.java
+│   │   │           │   │       ├── AnswerRecordsIdConstants.java
+│   │   │           │   │       ├── AnswerRecordsRefLookUpImpl.java
+│   │   │           │   │       ├── AnswerRecordsRepository.java
+│   │   │           │   │       ├── AnswerRecordsServiceImpl.java
+│   │   │           │   │       ├── AnswerRecordsValidationMessages.java
+│   │   │           │   │       ├── ToADMIN_AnswerRecordsViewDtoMapper.java
+│   │   │           │   │       ├── ToUSER_AnswerRecordsViewDtoMapper.java
+│   │   │           │   │       ├── USER_AnswerRecordsController.java
+│   │   │           │   │       ├── USER_AnswerRecordsControllerAdvice.java
+│   │   │           │   │       ├── USER_AnswerRecordsForm.java
+│   │   │           │   │       ├── USER_AnswerRecordsFormList.java
+│   │   │           │   │       ├── USER_AnswerRecordsFormListValidator.java
+│   │   │           │   │       └── USER_AnswerRecordsFormValidator.java
+│   │   │           │   ├── attempt_session
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_AttemptSessionViewDto.java
+│   │   │           │   │   │   │   └── USER_AttemptSessionViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── AttemptSessionException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── AttemptSessionObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       ├── AttemptSessionRefLookUp.java
+│   │   │           │   │   │       └── AttemptSessionService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_AttemptSessionController.java
+│   │   │           │   │       ├── AttemptSessionDB.java
+│   │   │           │   │       ├── AttemptSessionEntity.java
+│   │   │           │   │       ├── AttemptSessionErrorCode.java
+│   │   │           │   │       ├── AttemptSessionIdBridge.java
+│   │   │           │   │       ├── AttemptSessionIdConstants.java
+│   │   │           │   │       ├── AttemptSessionRefLookUpImpl.java
+│   │   │           │   │       ├── AttemptSessionRepository.java
+│   │   │           │   │       ├── AttemptSessionServiceImpl.java
+│   │   │           │   │       ├── ToADMIN_AttemptSessionViewDtoMapper.java
+│   │   │           │   │       └── ToUSER_AttemptSessionViewDtoMapper.java
+│   │   │           │   ├── authority
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── domain
+│   │   │           │   │   │   │   └── AuthorityEnum.java
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   └── ADMIN_AuthorityViewDto.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── AuthorityObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       └── AuthorityService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_AuthorityController.java
+│   │   │           │   │       ├── ADMIN_AuthorityControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_AuthorityForm.java
+│   │   │           │   │       ├── ADMIN_AuthorityFormValidator.java
+│   │   │           │   │       ├── AuthorityDB.java
+│   │   │           │   │       ├── AuthorityFormParam.java
+│   │   │           │   │       ├── AuthorityServiceImpl.java
+│   │   │           │   │       ├── AuthorityValidationMessages.java
+│   │   │           │   │       └── ToADMIN_AuthorityViewDtoMapper.java
+│   │   │           │   ├── chapter
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_ChapterInputDto.java
+│   │   │           │   │   │   │   ├── ADMIN_ChapterViewDto.java
+│   │   │           │   │   │   │   └── USER_ChapterViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── ChapterException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── ChapterObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       ├── ChapterRefLookUp.java
+│   │   │           │   │   │       └── ChapterService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_ChapterController.java
+│   │   │           │   │       ├── ADMIN_ChapterControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_ChapterForm.java
+│   │   │           │   │       ├── ADMIN_ChapterFormValidator.java
+│   │   │           │   │       ├── ChapterDB.java
+│   │   │           │   │       ├── ChapterEntity.java
+│   │   │           │   │       ├── ChapterErrorCode.java
+│   │   │           │   │       ├── ChapterFormParam.java
+│   │   │           │   │       ├── ChapterIdBridge.java
+│   │   │           │   │       ├── ChapterIdConstants.java
+│   │   │           │   │       ├── ChapterRefLookUpImpl.java
+│   │   │           │   │       ├── ChapterRepository.java
+│   │   │           │   │       ├── ChapterServiceImpl.java
+│   │   │           │   │       ├── ToADMIN_ChapterViewDtoMapper.java
+│   │   │           │   │       ├── ToUSER_ChapterViewDtoMapper.java
+│   │   │           │   │       └── USER_ChapterController.java
+│   │   │           │   ├── error
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── advice
+│   │   │           │   │   │   │   ├── GlobalAppExceptionAdvice.java
+│   │   │           │   │   │   │   └── GlobalUnexpectedExceptionAdvice.java
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   └── ErrorViewDto.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       └── ErrorStateService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_ErrorController.java
+│   │   │           │   │       ├── ErrorReportService.java
+│   │   │           │   │       ├── ErrorStateServiceImpl.java
+│   │   │           │   │       ├── LoginErrorController.java
+│   │   │           │   │       └── USER_ErrorController.java
+│   │   │           │   ├── home
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── AdminHomeController.java
+│   │   │           │   │       └── UserHomeController.java
+│   │   │           │   ├── kurohon_questions
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_KurohonQuestionsInputDto.java
+│   │   │           │   │   │   │   ├── ADMIN_KurohonQuestionsViewDto.java
+│   │   │           │   │   │   │   └── USER_KurohonQuestionsViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── KurohonQuestionsException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── KurohonQuestionsObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       ├── KurohonQuestionsRefLookUp.java
+│   │   │           │   │   │       └── KurohonQuestionsService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_KurohonQuestionsController.java
+│   │   │           │   │       ├── ADMIN_KurohonQuestionsControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_KurohonQuestionsForm.java
+│   │   │           │   │       ├── ADMIN_KurohonQuestionsFormValidator.java
+│   │   │           │   │       ├── KurohonQuestionsDB.java
+│   │   │           │   │       ├── KurohonQuestionsEntity.java
+│   │   │           │   │       ├── KurohonQuestionsErrorCode.java
+│   │   │           │   │       ├── KurohonQuestionsFormParam.java
+│   │   │           │   │       ├── KurohonQuestionsIdBridge.java
+│   │   │           │   │       ├── KurohonQuestionsIdConstants.java
+│   │   │           │   │       ├── KurohonQuestionsRefLookUpImpl.java
+│   │   │           │   │       ├── KurohonQuestionsRepository.java
+│   │   │           │   │       ├── KurohonQuestionsServiceImpl.java
+│   │   │           │   │       ├── ToADMIN_KurohonQuestionsViewDtoMapper.java
+│   │   │           │   │       └── ToUSER_KurohonQuestionsViewDtoMapper.java
+│   │   │           │   ├── login
+│   │   │           │   │   ├── login
+│   │   │           │   │   │   ├── api
+│   │   │           │   │   │   │   └── param
+│   │   │           │   │   │   └── internal
+│   │   │           │   │   │       ├── LoginController.java
+│   │   │           │   │   │       ├── LoginControllerAdvice.java
+│   │   │           │   │   │       ├── LoginForm.java
+│   │   │           │   │   │       └── LoginFormValidator.java
+│   │   │           │   │   └── password_set
+│   │   │           │   │       └── internal
+│   │   │           │   │           ├── PasswordSetController.java
+│   │   │           │   │           ├── PasswordSetControllerAdvice.java
+│   │   │           │   │           ├── PasswordSetForm.java
+│   │   │           │   │           ├── PasswordSetFormParam.java
+│   │   │           │   │           └── PasswordSetFormValidator.java
+│   │   │           │   ├── sankou_book_color
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── domain
+│   │   │           │   │   │   │   └── SankouBookColorEnum.java
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_SankouBookColorInputDto.java
+│   │   │           │   │   │   │   └── ADMIN_SankouBookColorViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── SankouBookColorException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── SankouBookColorObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       └── SankouBookColorService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_SankouBookColorController.java
+│   │   │           │   │       ├── ADMIN_SankouBookColorControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_SankouBookColorForm.java
+│   │   │           │   │       ├── ADMIN_SankouBookColorFormValidator.java
+│   │   │           │   │       ├── SankouBookColorDB.java
+│   │   │           │   │       ├── SankouBookColorEntity.java
+│   │   │           │   │       ├── SankouBookColorErrorCode.java
+│   │   │           │   │       ├── SankouBookColorFormParam.java
+│   │   │           │   │       ├── SankouBookColorIdBridge.java
+│   │   │           │   │       ├── SankouBookColorIdConstants.java
+│   │   │           │   │       ├── SankouBookColorRepository.java
+│   │   │           │   │       ├── SankouBookColorServiceImpl.java
+│   │   │           │   │       ├── ToADMIN_SankouBookColorViewDtoMapper.java
+│   │   │           │   │       └── ToSankouBookColorEnumMapper.java
+│   │   │           │   ├── sankou_books
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_SankouBooksInputDto.java
+│   │   │           │   │   │   │   ├── ADMIN_SankouBooksViewDto.java
+│   │   │           │   │   │   │   └── USER_SankouBooksViewDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── SankouBooksException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── SankouBooksObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       ├── SankouBooksRefLookUp.java
+│   │   │           │   │   │       └── SankouBooksService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_SankouBooksController.java
+│   │   │           │   │       ├── ADMIN_SankouBooksControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_SankouBooksForm.java
+│   │   │           │   │       ├── ADMIN_SankouBooksFormValidator.java
+│   │   │           │   │       ├── SankouBooksDB.java
+│   │   │           │   │       ├── SankouBooksEntity.java
+│   │   │           │   │       ├── SankouBooksErrorCode.java
+│   │   │           │   │       ├── SankouBooksFormParam.java
+│   │   │           │   │       ├── SankouBooksIdBridge.java
+│   │   │           │   │       ├── SankouBooksIdConstants.java
+│   │   │           │   │       ├── SankouBooksRefLookUpImpl.java
+│   │   │           │   │       ├── SankouBooksRepository.java
+│   │   │           │   │       ├── SankouBooksServiceImpl.java
+│   │   │           │   │       ├── ToADMIN_SankouBooksViewDtoMapper.java
+│   │   │           │   │       ├── ToUSER_SankouBooksViewDtoMapper.java
+│   │   │           │   │       ├── USER_SankouBooksController.java
+│   │   │           │   │       └── USER_SankouBooksControllerAdvice.java
+│   │   │           │   ├── users
+│   │   │           │   │   ├── api
+│   │   │           │   │   │   ├── dto
+│   │   │           │   │   │   │   ├── ADMIN_UsersViewDto.java
+│   │   │           │   │   │   │   └── USER_UsersInputDto.java
+│   │   │           │   │   │   ├── exception
+│   │   │           │   │   │   │   └── UsersException.java
+│   │   │           │   │   │   ├── param
+│   │   │           │   │   │   │   └── UsersObjParam.java
+│   │   │           │   │   │   └── service
+│   │   │           │   │   │       └── UsersService.java
+│   │   │           │   │   └── internal
+│   │   │           │   │       ├── ADMIN_UsersController.java
+│   │   │           │   │       ├── ADMIN_UsersControllerAdvice.java
+│   │   │           │   │       ├── ADMIN_UsersForm.java
+│   │   │           │   │       ├── ADMIN_UsersFormValidator.java
+│   │   │           │   │       ├── ToADMIN_UsersViewDtoMapper.java
+│   │   │           │   │       ├── USER_UsersController.java
+│   │   │           │   │       ├── USER_UsersControllerAdvice.java
+│   │   │           │   │       ├── USER_UsersForm.java
+│   │   │           │   │       ├── USER_UsersFormValidator.java
+│   │   │           │   │       ├── UsersErrorCode.java
+│   │   │           │   │       ├── UsersFormParam.java
+│   │   │           │   │       ├── UsersServiceImpl.java
+│   │   │           │   │       └── UsersValidationMessages.java
+│   │   │           │   └── weakness
+│   │   │           │       ├── api
+│   │   │           │       │   ├── agg
+│   │   │           │       │   │   └── WeaknessChapterAgg.java
+│   │   │           │       │   ├── dto
+│   │   │           │       │   │   ├── ADMIN_WeaknessViewDto.java
+│   │   │           │       │   │   └── USER_WeaknessViewDto.java
+│   │   │           │       │   ├── exception
+│   │   │           │       │   │   └── WeaknessException.java
+│   │   │           │       │   ├── param
+│   │   │           │       │   │   └── WeaknessObjParam.java
+│   │   │           │       │   └── service
+│   │   │           │       │       ├── WeaknessRefLookUp.java
+│   │   │           │       │       └── WeaknessService.java
+│   │   │           │       └── internal
+│   │   │           │           ├── ADMIN_WeaknessController.java
+│   │   │           │           ├── ToADMIN_WeaknessViewDtoMapper.java
+│   │   │           │           ├── ToUSER_WeaknessChapterViewDtoMapper.java
+│   │   │           │           ├── ToUSER_WeaknessQuestionsViewDtoMapper.java
+│   │   │           │           ├── USER_WeaknessController.java
+│   │   │           │           ├── USER_WeaknessControllerAdvice.java
+│   │   │           │           ├── WeaknessDB.java
+│   │   │           │           ├── WeaknessEntity.java
+│   │   │           │           ├── WeaknessErrorCode.java
+│   │   │           │           ├── WeaknessIdBridge.java
+│   │   │           │           ├── WeaknessIdConstants.java
+│   │   │           │           ├── WeaknessRefLookupImpl.java
+│   │   │           │           ├── WeaknessRepository.java
+│   │   │           │           └── WeaknessServiceImpl.java
+│   │   │           ├── config
+│   │   │           │   ├── EntityAndRepositoryConfig.java
+│   │   │           │   ├── logging
+│   │   │           │   │   ├── async
+│   │   │           │   │   │   └── MdcTaskDecorator.java
+│   │   │           │   │   ├── boot
+│   │   │           │   │   │   └── BootLogging.java
+│   │   │           │   │   ├── service
+│   │   │           │   │   │   └── ServicePerfAspect.java
+│   │   │           │   │   └── web
+│   │   │           │   │       ├── ClientLogController.java
+│   │   │           │   │       ├── LoggingWebConfig.java
+│   │   │           │   │       └── ViewIdInterceptor.java
+│   │   │           │   └── SecurityConfig.java
+│   │   │           ├── security
+│   │   │           │   └── AuthSessionRefresher.java
+│   │   │           ├── SpringJavase11StudyApplication.java
+│   │   │           ├── util
+│   │   │           │   ├── param
+│   │   │           │   │   ├── prop_key
+│   │   │           │   │   │   ├── GlobalPropKeysAdvice.java
+│   │   │           │   │   │   ├── PropKey.java
+│   │   │           │   │   │   └── PropKeyViewUtil.java
+│   │   │           │   │   └── validation_messages
+│   │   │           │   │       ├── BaseValidationMessagesContributor.java
+│   │   │           │   │       ├── GlobalValidationMessagesAdvice.java
+│   │   │           │   │       ├── ValidationMessagesContributor.java
+│   │   │           │   │       └── ValidationMessageUtil.java
+│   │   │           │   └── path
+│   │   │           │       ├── AppPath.java
+│   │   │           │       ├── PackagePath.java
+│   │   │           │       └── TempPath.java
+│   │   │           └── validation
+│   │   │               ├── authority_system_name
+│   │   │               │   ├── AuthoritySystemNamePolicyValidator.java
+│   │   │               │   └── ValidAuthoritySystemName.java
+│   │   │               ├── book_color_name
+│   │   │               │   ├── BookColorNamePolicyValidator.java
+│   │   │               │   └── ValidBookColorName.java
+│   │   │               ├── password
+│   │   │               │   ├── PasswordPolicyValidator.java
+│   │   │               │   └── ValidPassword.java
+│   │   │               ├── selected_option
+│   │   │               │   ├── SelectedOptionPolicyValidator.java
+│   │   │               │   └── ValidSelectedOption.java
+│   │   │               └── username
+│   │   │                   ├── UsernamePolicyValidator.java
+│   │   │                   └── ValidUsername.java
+│   │   └── resources
+│   │       ├── application-dev.properties
+│   │       ├── application-init.properties
+│   │       ├── application-prod.properties
+│   │       ├── application.properties
+│   │       ├── config
+│   │       │   ├── db.properties
+│   │       │   ├── error.properties
+│   │       │   ├── labels.properties
+│   │       │   └── regex.properties
+│   │       ├── logback-spring.xml
+│   │       ├── sql
+│   │       │   ├── data
+│   │       │   │   ├── 001_authority.sql
+│   │       │   │   ├── 002_users.sql
+│   │       │   │   ├── 011_sankou_book_color.sql
+│   │       │   │   ├── 012_sankou_books.sql
+│   │       │   │   ├── 013_chapter.sql
+│   │       │   │   └── 014_kurohon_questions.sql
+│   │       │   └── schema
+│   │       │       └── 001_base.sql
+│   │       ├── static
+│   │       │   ├── css
+│   │       │   │   ├── common
+│   │       │   │   │   └── var.css
+│   │       │   │   ├── fragment
+│   │       │   │   │   └── colorTheme.css
+│   │       │   │   └── main-contents
+│   │       │   │       ├── admin
+│   │       │   │       │   ├── answer-records
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── attempt-session
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── authority
+│   │       │   │       │   │   ├── insertUpdate.css
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── chapter
+│   │       │   │       │   │   ├── insertUpdate.css
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── kurohon-questions
+│   │       │   │       │   │   ├── insertUpdate.css
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── sankou-book-color
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── sankou-books
+│   │       │   │       │   │   ├── insertUpdate.css
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   ├── users
+│   │       │   │       │   │   ├── insertUpdate.css
+│   │       │   │       │   │   └── setting.css
+│   │       │   │       │   └── weakness
+│   │       │   │       │       └── setting.css
+│   │       │   │       ├── login
+│   │       │   │       │   ├── error.css
+│   │       │   │       │   ├── login.css
+│   │       │   │       │   └── passwordSet.css
+│   │       │   │       └── user
+│   │       │   │           ├── accountSetting.css
+│   │       │   │           ├── answer.css
+│   │       │   │           ├── error.css
+│   │       │   │           ├── result.css
+│   │       │   │           └── weakness.css
+│   │       │   ├── img
+│   │       │   │   └── png
+│   │       │   │       ├── error.png
+│   │       │   │       ├── login.png
+│   │       │   │       ├── setting.png
+│   │       │   │       └── study.png
+│   │       │   └── js
+│   │       │       ├── main-contents
+│   │       │       │   ├── admin
+│   │       │       │   │   ├── answer-records
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── attempt-session
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── authority
+│   │       │       │   │   │   ├── insert-update
+│   │       │       │   │   │   │   ├── const.js
+│   │       │       │   │   │   │   ├── controller.js
+│   │       │       │   │   │   │   ├── form.js
+│   │       │       │   │   │   │   └── service.js
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── chapter
+│   │       │       │   │   │   ├── insert-update
+│   │       │       │   │   │   │   ├── const.js
+│   │       │       │   │   │   │   ├── controller.js
+│   │       │       │   │   │   │   ├── form.js
+│   │       │       │   │   │   │   └── service.js
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── common.js
+│   │       │       │   │   ├── error
+│   │       │       │   │   │   └── controller.js
+│   │       │       │   │   ├── home
+│   │       │       │   │   │   └── controller.js
+│   │       │       │   │   ├── kurohon-questions
+│   │       │       │   │   │   ├── insert-update
+│   │       │       │   │   │   │   ├── const.js
+│   │       │       │   │   │   │   ├── controller.js
+│   │       │       │   │   │   │   ├── form.js
+│   │       │       │   │   │   │   └── service.js
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── sankou-book-color
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── sankou-books
+│   │       │       │   │   │   ├── insert-update
+│   │       │       │   │   │   │   ├── const.js
+│   │       │       │   │   │   │   ├── controller.js
+│   │       │       │   │   │   │   ├── form.js
+│   │       │       │   │   │   │   └── service.js
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   ├── users
+│   │       │       │   │   │   ├── insert-update
+│   │       │       │   │   │   │   ├── const.js
+│   │       │       │   │   │   │   ├── controller.js
+│   │       │       │   │   │   │   ├── form.js
+│   │       │       │   │   │   │   └── service.js
+│   │       │       │   │   │   └── setting
+│   │       │       │   │   │       └── controller.js
+│   │       │       │   │   └── weakness
+│   │       │       │   │       └── setting
+│   │       │       │   │           └── controller.js
+│   │       │       │   ├── login
+│   │       │       │   │   ├── error
+│   │       │       │   │   │   └── controller.js
+│   │       │       │   │   ├── login
+│   │       │       │   │   │   ├── const.js
+│   │       │       │   │   │   ├── controller.js
+│   │       │       │   │   │   ├── form.js
+│   │       │       │   │   │   └── service.js
+│   │       │       │   │   └── passwordSet
+│   │       │       │   │       ├── const.js
+│   │       │       │   │       ├── controller.js
+│   │       │       │   │       ├── form.js
+│   │       │       │   │       └── service.js
+│   │       │       │   └── user
+│   │       │       │       ├── accountSetting
+│   │       │       │       │   ├── const.js
+│   │       │       │       │   ├── controller.js
+│   │       │       │       │   ├── form.js
+│   │       │       │       │   └── service.js
+│   │       │       │       ├── answer
+│   │       │       │       │   ├── const.js
+│   │       │       │       │   ├── controller.js
+│   │       │       │       │   ├── form.js
+│   │       │       │       │   └── service.js
+│   │       │       │       ├── chapter
+│   │       │       │       │   └── controller.js
+│   │       │       │       ├── common.js
+│   │       │       │       ├── error
+│   │       │       │       │   └── controller.js
+│   │       │       │       ├── home
+│   │       │       │       │   └── controller.js
+│   │       │       │       ├── sankouBooks
+│   │       │       │       │   └── controller.js
+│   │       │       │       └── weakness
+│   │       │       │           └── controller.js
+│   │       │       └── util
+│   │       │           ├── client-logger.js
+│   │       │           └── csrf.js
+│   │       └── templates
+│   │           ├── admin
+│   │           │   ├── common.html
+│   │           │   ├── footer.html
+│   │           │   ├── main-contents
+│   │           │   │   ├── answer-records
+│   │           │   │   │   └── setting.html
+│   │           │   │   ├── attempt-session
+│   │           │   │   │   └── setting.html
+│   │           │   │   ├── authority
+│   │           │   │   │   ├── insert.html
+│   │           │   │   │   ├── setting.html
+│   │           │   │   │   └── update.html
+│   │           │   │   ├── chapter
+│   │           │   │   │   ├── insert.html
+│   │           │   │   │   ├── setting.html
+│   │           │   │   │   └── update.html
+│   │           │   │   ├── error.html
+│   │           │   │   ├── home.html
+│   │           │   │   ├── kurohon-questions
+│   │           │   │   │   ├── insert.html
+│   │           │   │   │   ├── setting.html
+│   │           │   │   │   └── update.html
+│   │           │   │   ├── sankou-book-color
+│   │           │   │   │   └── setting.html
+│   │           │   │   ├── sankou-books
+│   │           │   │   │   ├── insert.html
+│   │           │   │   │   ├── setting.html
+│   │           │   │   │   └── update.html
+│   │           │   │   ├── users
+│   │           │   │   │   ├── insert.html
+│   │           │   │   │   ├── setting.html
+│   │           │   │   │   └── update.html
+│   │           │   │   └── weakness
+│   │           │   │       └── setting.html
+│   │           │   └── navbar.html
+│   │           ├── common
+│   │           │   ├── log.html
+│   │           │   └── props.html
+│   │           ├── login
+│   │           │   ├── common.html
+│   │           │   └── main-contents
+│   │           │       ├── error.html
+│   │           │       ├── login.html
+│   │           │       └── passwordSet.html
+│   │           └── user
+│   │               ├── common.html
+│   │               ├── footer.html
+│   │               ├── main-contents
+│   │               │   ├── accountSetting.html
+│   │               │   ├── answer.html
+│   │               │   ├── chapter.html
+│   │               │   ├── error.html
+│   │               │   ├── home.html
+│   │               │   ├── result.html
+│   │               │   ├── sankouBooks.html
+│   │               │   └── weakness.html
+│   │               └── navbar.html
+│   └── test
+│       ├── java
+│       │   └── com
+│       │       └── javastudy
+│       │           ├── component
+│       │           │   └── param
+│       │           │       ├── DbContractTest.java
+│       │           │       └── DbContractTest.java.bak
+│       │           ├── SpringJavase11StudyApplicationTests.java
+│       │           ├── SpringJavase11StudyApplicationTests.java.bak
+│       │           └── util
+│       │               └── param
+│       │                   ├── PropKeyErrorKeysTest.java
+│       │                   ├── PropKeyErrorKeysTest.java.bak
+│       │                   ├── PropKeyRegexKeysTest.java
+│       │                   ├── PropKeyRegexKeysTest.java.bak
+│       │                   ├── PropKeyTest.java
+│       │                   ├── PropKeyTest.java.bak
+│       │                   ├── PropTest.java
+│       │                   ├── PropTest.java.bak
+│       │                   ├── RegexBehaviorSmokeTest.java
+│       │                   ├── RegexBehaviorSmokeTest.java.bak
+│       │                   ├── RegexSyntaxTest.java
+│       │                   └── RegexSyntaxTest.java.bak
+│       └── resources
+└── tree_java_study.txt
+
+216 directories, 476 files
+
+tree -a -I 'target|.git|node_modules|build|dist|.idea|.vscode|.gradle|out|coverage' -L 10 > tree_java_study.txt

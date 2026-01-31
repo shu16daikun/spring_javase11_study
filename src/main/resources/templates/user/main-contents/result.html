@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{user/common :: user-header('答え合わせ画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/breadcrump.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/table.css}">
+		<link rel="stylesheet" media="all" th:href="@{/css/main-contents/user/result.css}">
+		<!-- 自作個別js -->
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<!-- navbar -->
+	<div th:replace="~{user/navbar :: user-navbar}"></div>
+	<!-- main-contents -->
+	<main class="my-container">
+		<!-- breadcrump -->
+		<div class="my-breadcrump-simple">
+			<nav>
+				<ol>
+					<li><a th:href="@{/user}">ホーム</a></li>
+					<li><a th:href="@{/user/sankouBooks}">黒本問題集</a></li>
+					<li>
+						<a th:href="@{/user/sankouBooks/{book_view_id}(book_view_id=${sankouBooksViewDto.viewId})}"
+							th:text="${sankouBooksViewDto.name}"></a>
+					</li>
+					<li>答え合わせ</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- table -->
+		<div class="table-area">
+			<div class="my-table">
+				<table>
+					<thead>
+						<tr>
+							<th>章No</th>
+							<th>章名</th>
+							<th>問No</th>
+							<th>選択</th>
+							<th>正解</th>
+							<th>判定</th>
+							<th>解説キーワード</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="ar : ${answerRecordsViewDtoList}"
+							th:classappend="${ #strings.isEmpty(ar.selectedOption)
+											or #strings.equalsIgnoreCase(ar.selectedOption,'UNKNOWN')
+											or #strings.equalsIgnoreCase(ar.selectedOption,'UNKNONW')
+											? ' is-unknown'
+											: (ar.corrected ? ' is-correct' : ' is-wrong') }">
+							<td th:text="${ar.chapterViewDto.no}">1</td>
+							<td th:text="${ar.chapterViewDto.name}">章タイトル</td>
+							<td th:text="${ar.questionsViewDto.questionNo}">1</td>
+							<td th:text="${ar.selectedOption}"
+								th:classappend="${ #strings.isEmpty(ar.selectedOption)
+												or #strings.equalsIgnoreCase(ar.selectedOption,'UNKNOWN')
+												or #strings.equalsIgnoreCase(ar.selectedOption,'UNKNONW')
+												? ' is-unknown-cell' : '' }">
+							</td>
+							<td th:text="${ar.questionsViewDto.correctOption}">AC</td>
+							<td>
+								<span class="judge" th:text="${ar.corrected} ? '○' : '×'"
+									th:classappend="${ar.corrected} ? ' success' : ' danger'">○</span>
+							</td>
+							<td th:utext="${ar.questionsViewDto.explanationHtml}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- item-right -->
+		<div class="item-right">
+			<!-- stats-area -->
+			<div class="stats-area">
+				<div>回答数：<span th:text="${answerRecordsStatsViewDto.totalCount}">0</span>問</div>
+				<div>正答数：<span th:text="${answerRecordsStatsViewDto.correctCount}">0</span>問</div>
+				<div>正答率：<span th:text="${answerRecordsStatsViewDto.accuracy}">0.0</span>%</div>
+				<!-- 正答率バー -->
+				<div class="stat-progress">
+					<div class="my-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+						th:aria-valuenow="${answerRecordsStatsViewDto.accuracy}">
+						<div class="my-progress-bar" th:style="'width:' + ${answerRecordsStatsViewDto.accuracy} + '%'"
+							th:classappend="${answerRecordsStatsViewDto.accuracy} < 25 ? ' danger' :
+												(${answerRecordsStatsViewDto.accuracy} < 50 ? ' warn' :
+												(${answerRecordsStatsViewDto.accuracy} < 75 ? ' info' : ' success'))">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- buttens -->
+			<div class="btn-area">
+				<a th:href="@{/user}" class="my-btn-secondary">ホーム画面に戻る</a>
+			</div>
+		</div>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{user/browser-guard :: user-browser-guard}"></div>
+	<!-- footer -->
+	<div th:replace="~{user/footer :: user-footer}"></div>
+</body>
+<!-- body要素ここまで -->
+
+</html>

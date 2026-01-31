@@ -1,0 +1,60 @@
+:root {
+	/* === Custom Study Themes === */
+
+	/* --- 黒本テーマ（教材・暗背景用） --- */
+	--color-kurohon: #1b1b1b;
+	/* 背景：深い黒 */
+	--color-kurohon-hover: #2a2a2a;
+	/* hover：やや明るめの黒 */
+	--color-kurohon-text: #f5f5f5;
+	/* テキスト：白系 */
+	--color-kurohon-border: #333333;
+	/* 枠線 */
+	--color-kurohon-accent: #0d6efd;
+	/* 差し色（青系強調） */
+
+	/* --- 矢印テーマ（Dark系・ナビゲーション向け） --- */
+	--color-arrow-dark: #343a40;
+	/* ベース：ダークグレー */
+	--color-arrow-dark-hover: #495057;
+	/* hover時：明るめグレー */
+	--color-arrow-dark-text: #ffffff;
+	/* テキスト：白 */
+	--color-arrow-dark-border: #212529;
+	/* 枠線：より暗いグレー */
+	--color-arrow-dark-accent: #adb5bd;
+	/* アイコン用淡グレー */
+
+	/* --- 自作問題集テーマ（Success系：緑トーン） --- */
+	--color-custom-success: #198754;
+	/* ベース：Bootstrap success */
+	--color-custom-success-hover: #157347;
+	/* hover時：濃い緑 */
+	--color-custom-success-text: #e9f7ef;
+	/* テキスト：淡い白緑 */
+	--color-custom-success-border: #0f5132;
+	/* 枠線：深緑 */
+	--color-custom-success-accent: #20c997;
+	/* アクセント：明るい緑 */
+
+	/* === Java Certification Colors === */
+	--color-java-bronze: #cd7f32;
+	/* 銅：落ち着いたブロンズ */
+	--color-java-bronze-hover: #b36a2a;
+
+	--color-java-silver: #c0c0c0;
+	/* 銀：明るめのメタリックグレー */
+	--color-java-silver-hover: #a9a9a9;
+
+	--color-java-gold: #ffd700;
+	/* 金：鮮やかなゴールド */
+	--color-java-gold-hover: #e6c200;
+
+	/* === Java Certification Text Colors === */
+	--color-java-bronze-text: #3e2a00;
+	/* ブロンズ上で読みやすい濃茶系 */
+	--color-java-silver-text: #212529;
+	/* 通常テキスト色でOK */
+	--color-java-gold-text: #3d2e00;
+	/* 金の上で読みやすい焦げ茶 */
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{user/common :: user-header('苦手分析画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/css/main-contents/user/weakness.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/breadcrump.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/table.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/accordion.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/user/weakness/controller.js}"></script>
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<!-- navbar -->
+	<div th:replace="~{user/navbar :: user-navbar}"></div>
+	<!-- main-contents -->
+	<main class="my-container-left">
+		<!-- breadcrump -->
+		<div class="my-breadcrump-simple">
+			<nav>
+				<ol>
+					<li><a th:href="@{/user}">ホーム</a></li>
+					<li><a th:href="@{/user/sankouBooks}">黒本問題集</a></li>
+					<li>
+						<a th:href="@{/user/sankouBooks/{book_view_id}(book_view_id=${sankouBooksViewDto.viewId})}"
+							th:text="${sankouBooksViewDto.name}"></a>
+					</li>
+					<li>苦手分析</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- accordion -->
+		<div class="title">問題ごとの分析は3回以上解答したもので集計しています。</div>
+		<div class="my-accordion">
+			<div class="my-accordion-item">
+				<h2 class="my-accordion-header">
+					<button class="my-accordion-toggle" aria-expanded="false">
+						章ごとの苦手分析
+						<svg class="my-accordion-icon" width="16" height="16" fill="currentColor">
+							<use href="#chevron-down"></use>
+						</svg>
+					</button>
+				</h2>
+				<div class="my-accordion-collapse">
+					<div class="my-accordion-body">
+						<!-- table -->
+						<div class="table-area">
+							<div class="my-table">
+								<table>
+									<thead>
+										<tr>
+											<th>章No</th>
+											<th>章名</th>
+											<th>正答率（％）</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="wc : ${weaknessChapterViewDtoList}">
+											<td th:text="${wc.chapterViewDto.no}">1</td>
+											<td th:text="${wc.chapterViewDto.name}">章タイトル</td>
+											<td th:text="${wc.correctRate}">0.0</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="my-accordion-item">
+				<h2 class="my-accordion-header">
+					<button class="my-accordion-toggle" aria-expanded="false">
+						問題ごとの苦手分析
+						<svg class="my-accordion-icon" width="16" height="16" fill="currentColor">
+							<use href="#chevron-down"></use>
+						</svg>
+					</button>
+				</h2>
+				<div class="my-accordion-collapse">
+					<div class="my-accordion-body">
+						<!-- table -->
+						<div class="table-area">
+							<div class="my-table">
+								<table>
+									<thead>
+										<tr>
+											<th>章No</th>
+											<th>章名</th>
+											<th>問題No</th>
+											<th>解答回数</th>
+											<th>正答率（％）</th>
+											<th>解説キーワード</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="wq : ${weaknessQuestionsViewDtoList}">
+											<td th:text="${wq.chapterViewDto.no}">1</td>
+											<td th:text="${wq.chapterViewDto.name}">章タイトル</td>
+											<td th:text="${wq.questionsViewDto.questionNo}">1</td>
+											<td th:text="${wq.totalAttempts}">0</td>
+											<td th:text="${wq.correctRate}">0.0</td>
+											<td th:utext="${wq.questionsViewDto.explanationHtml}"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{user/browser-guard :: user-browser-guard}"></div>
+	<!-- footer -->
+	<div th:replace="~{user/footer :: user-footer}"></div>
+</body>
+<!-- body要素ここまで -->
+
+</html>

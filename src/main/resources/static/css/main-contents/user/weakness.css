@@ -1,0 +1,15 @@
+.title {
+	color: var(--color-secondary);
+	margin: var(--spacer-3) 0;
+}
+
+/* a 共通 */
+.my-table td a {
+	color: var(--link-color-secondary);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+.my-table td a:hover {
+	text-decoration: underline;
+	color: var(--link-color-secondary-hover);
+}

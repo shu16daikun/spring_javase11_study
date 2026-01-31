@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{user/common :: user-header('参考書有り解答画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/css/main-contents/user/answer.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/breadcrump.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/btnGroupVertical.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/validation.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/alert.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/user/answer/controller.js}"></script>
+	</th:block>
+</head>
+
+<body class="my-items-center-body">
+	<div th:replace="~{user/navbar :: user-navbar}"></div>
+	<main class="my-container">
+		<!-- パンくず -->
+		<div class="my-breadcrump-simple">
+			<nav>
+				<ol>
+					<li><a th:href="@{/user}">ホーム</a></li>
+					<li><a th:href="@{/user/sankouBooks}">黒本問題集</a></li>
+					<li>
+						<a th:href="@{/user/sankouBooks/{book_view_id}(book_view_id=${sankouBooksViewDto.viewId})}"
+							th:text="${sankouBooksViewDto.name}"></a>
+					</li>
+					<li th:text="${chapterViewDto.no + '章 ' + chapterViewDto.name}"></li>
+				</ol>
+			</nav>
+		</div>
+
+		<!-- 一括POSTフォーム -->
+		<form th:action="@{/user/sankouBooks/{book_view_id}/{chapter_no}/finish(
+				book_view_id=${sankouBooksViewDto.viewId},
+				chapter_no=${chapterViewDto.no}
+			)}" class="my-validation" th:object="${answerRecordsFormList}" method="post" id="finish-form">
+			<!-- alert -->
+			<div class="alert-area" th:if="${errorMessage != null}">
+				<div class="my-alert-danger" th:each="m : ${errorMessage}" th:data-text="${m}">
+				</div>
+			</div>
+			<!-- 問ごとに 1 フォーム要素 -->
+			<div class="my-btn-group-horizontal has-unknown" th:each="form, stat : *{formItems}" th:with="
+				 	qno=${form.kurohonQuestions.questionNo},
+				 	max=${form.kurohonQuestions.answerCountMax}" th:attr="data-qno=${qno}, data-max=${max}">
+				<div class="my-btn-option-title" th:text="${'問' + qno}"></div>
+				<!-- 選択肢 A..E を values から展開 -->
+				<div class="my-btn-option" th:each="val : ${form.values}">
+					<input type="checkbox" th:id="${qno + '_' + val}"
+						th:field="*{formItems[__${stat.index}__].selectedOption}" th:value="${val}">
+					<label th:for="${qno + '_' + val}">
+						<span th:text="${val}"></span>
+					</label>
+				</div>
+
+				<!-- わからない（単独選択） -->
+				<div class="my-btn-option is-unknown">
+					<input type="checkbox" th:id="${qno + '_unknown'}"
+						th:field="*{formItems[__${stat.index}__].selectedOption}" value="UNKNOWN">
+					<label th:for="${qno + '_unknown'}">わからない</label>
+				</div>
+
+				<div class="my-invalid" th:id="${qno + '_invalid'}"></div>
+			</div>
+		</form>
+
+		<!-- 次章へ -->
+		<form id="next-chapter-form" th:action="@{/user/sankouBooks/{book_view_id}/{chapter_no}/next(
+				book_view_id=${sankouBooksViewDto.viewId},
+				chapter_no=${chapterViewDto.no}
+			)}" method="post">
+		</form>
+		<div class="btn-area">
+			<button type="button" class="my-btn-primary my-modal-open" data-modal="#next-modal"
+				th:if="${hasNextChapter}">次章へ</button>
+			<button type="button" class="my-btn-success my-modal-open" data-modal="#finish-modal">終了する</button>
+		</div>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{user/browser-guard :: user-browser-guard}"></div>
+	<!-- footer -->
+	<div th:replace="~{user/footer :: user-footer}"></div>
+
+	<!-- 終了モーダル -->
+	<div class="my-modal my-modal-dark" id="finish-modal">
+		<div class="my-modal-contents">
+			<div class="my-modal-dialog">
+				<div class="my-modal-content">
+					<div class="my-modal-header">
+						<h5 class="my-modal-title">解答終了確認</h5>
+						<button type="button" class="my-btn-dark" data-dismiss>&times;</button>
+					</div>
+					<div class="my-modal-body">
+						<p>解答を終了してもよろしいですか？</p>
+					</div>
+					<div class="my-modal-footer">
+						<button type="button" class="my-btn-secondary" data-dismiss>キャンセル</button>
+						<button type="submit" class="my-btn-success" data-submit-form="#finish-form">終了する</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 次章モーダル -->
+	<div class="my-modal my-modal-dark" id="next-modal">
+		<div class="my-modal-contents">
+			<div class="my-modal-dialog">
+				<div class="my-modal-content">
+					<div class="my-modal-header">
+						<h5 class="my-modal-title">次章確認</h5>
+						<button type="button" class="my-btn-dark" data-dismiss>&times;</button>
+					</div>
+					<div class="my-modal-body">
+						<p>次章に移ってよろしいですか？</p>
+					</div>
+					<div class="my-modal-footer">
+						<button type="button" class="my-btn-secondary" data-dismiss>キャンセル</button>
+						<button type="button" class="my-btn-primary" data-submit-form="#next-chapter-form">次章へ</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

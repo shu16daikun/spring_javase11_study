@@ -1,0 +1,10 @@
+<!-- src/main/resources/templates/common/props.html -->
+<th:block th:fragment="prop-keys">
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		window.PropKey = Object.freeze(/*[[${propKey}]]*/{});
+		window.VALIDATION_MESSAGES = Object.freeze(/*[[${validationMessages}]]*/ {});
+		window.BROWSER_GUARD = Object.freeze(/*[[${browserGuard}]]*/{});
+		/*]]>*/
+	</script>
+</th:block>

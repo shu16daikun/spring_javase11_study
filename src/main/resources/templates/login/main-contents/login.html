@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{login/common :: login-header('ログイン画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/css/main-contents/login/login.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/signin.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/body.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/form.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/validation.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/alert.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/login/login/controller.js}"></script>
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<div th:replace="~{psfm/fragment/svg/icons :: svg-icons}"></div>
+	<main class="my-form-signin">
+		<form th:action="@{/login}" th:object="${loginForm}" method="post" class="my-validation" autocomplete="on">
+			<!-- alert -->
+			<div th:if="${errorMessage != null}" class="my-alert-danger" th:data-text="${errorMessage}"></div>
+			<!-- va;idation -->
+			<div class="my-validation-container">
+				<div class="my-form-input" data-text="ユーザー名">
+					<input th:field="*{username}" type="text" autocomplete="username">
+				</div>
+				<div class="my-invalid"></div>
+			</div>
+			<div class="my-validation-container">
+				<div class="my-form-input" data-text="パスワード">
+					<input th:field="*{password}" type="password" autocomplete="current-password">
+				</div>
+				<div class="my-invalid"></div>
+			</div>
+			<button class="my-btn-primary" type="submit">ログイン</button>
+		</form>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{login/browser-guard :: login-browser-guard}"></div>
+	<!-- body要素ここまで -->
+</body>
+
+</html>

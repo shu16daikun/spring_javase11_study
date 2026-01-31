@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds"
+	packagingData="false">
+
+	<property name="LOG_DIR" value="${LOG_DIR:-logs}" />
+	<springProperty scope="context" name="APP_NAME"
+		source="spring.application.name" defaultValue="java-study" />
+
+	<property name="SERVER_LOG_FILE"
+		value="${LOG_DIR}/${APP_NAME}-server.log" />
+	<property name="CLIENT_LOG_FILE"
+		value="${LOG_DIR}/${APP_NAME}-client.log" />
+
+	<property name="SERVER_LOG_PATTERN"
+		value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level [%thread] %logger{36} traceId=%X{traceId:-} - %msg%n" />
+	<property name="CLIENT_LOG_PATTERN"
+		value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level traceId=%X{traceId:-} - %msg%n" />
+
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${SERVER_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SERVER_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${SERVER_LOG_FILE}</file>
+		<encoder>
+			<pattern>${SERVER_LOG_PATTERN}</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${SERVER_LOG_FILE}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>14</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="CLIENT_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${CLIENT_LOG_FILE}</file>
+		<encoder>
+			<pattern>${CLIENT_LOG_PATTERN}</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${CLIENT_LOG_FILE}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>14</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+
+	<!-- クライアントログ専用ロガー -->
+	<logger name="client" level="INFO" additivity="false">
+		<appender-ref ref="CLIENT_FILE" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="SERVER_FILE" />
+	</root>
+
+</configuration>

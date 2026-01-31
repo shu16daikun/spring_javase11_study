@@ -1,0 +1,211 @@
+/* 右側にまとめて寄せる器 */
+.item-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	/* 子要素（stats-area / btn-area）を右端に寄せる */
+	gap: 16px;
+	margin-top: 16px;
+}
+
+/* スタッツカード本体（中は左揃え） */
+.stats-area {
+	width: min(420px, 100%);
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 16px 20px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+	text-align: left;
+	/* ← 中身は左揃え */
+}
+
+/* 行の体裁：ラベル|値 を左右に配置 */
+.stats-area>div {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 4px 0;
+}
+
+/* 数値をちょい強調 */
+.stats-area span {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.1;
+}
+
+/* ボタン行は右端に */
+.btn-area {
+	width: min(420px, 100%);
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* モバイルはフル幅＆左寄せで自然に落とす */
+@media (max-width: 640px) {
+	.item-right {
+		align-items: stretch;
+	}
+
+	.btn-area {
+		justify-content: flex-end;
+	}
+}
+
+/* 正答率ヘッダ（ラベル | 数値% を左右に） */
+.stat-progress-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-top: 8px;
+	margin-bottom: 6px;
+	font-size: 14px;
+	color: #374151;
+}
+
+/* プログレス本体 */
+.my-progress {
+	width: 100%;
+	height: 12px;
+	background: #f3f4f6;
+	/* 薄いグレー */
+	border-radius: 9999px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* 進捗バー */
+.my-progress-bar {
+	height: 100%;
+	width: 0%;
+	border-radius: 9999px;
+	transition: width 0.35s ease;
+}
+
+/* 25%刻みの色分け（0–24 / 25–49 / 50–74 / 75–100） */
+.my-progress-bar.danger {
+	background: #ef4444;
+}
+
+/* 赤 */
+.my-progress-bar.warn {
+	background: #f59e0b;
+}
+
+/* オレンジ */
+.my-progress-bar.info {
+	background: #eab308;
+}
+
+/* アンバー */
+.my-progress-bar.success {
+	background: #10b981;
+}
+
+/* グリーン */
+
+/* トークンがあればそれを優先、なければ無難な色にフォールバック */
+:root {
+	/* 任意：var.cssに置くと全画面で再利用しやすい */
+	--table-row-warn-bg: #fff7ed;
+	/* orange-50 */
+	--table-row-warn-color: #7c2d12;
+	/* orange-900 */
+	--table-row-warn-hover: #ffedd5;
+	/* orange-100 */
+
+	--table-row-danger-bg: #fef2f2;
+	/* red-50 */
+	--table-row-danger-color: #7f1d1d;
+	/* red-900 */
+	--table-row-danger-hover: #fee2e2;
+	/* red-100 */
+}
+
+/* UNKNOWN（warning風） */
+.my-table tbody tr.is-unknown {
+	background-color: var(--table-row-warn-bg);
+	color: var(--table-row-warn-color);
+}
+
+.my-table tbody tr.is-unknown:hover {
+	background-color: var(--table-row-warn-hover);
+}
+
+/* WRONG（danger） */
+.my-table tbody tr.is-wrong {
+	background-color: var(--table-row-danger-bg);
+	color: var(--table-row-danger-color);
+}
+
+.my-table tbody tr.is-wrong:hover {
+	background-color: var(--table-row-danger-hover);
+}
+
+/* sticky-first を使う画面でも綺麗に交点が出るよう、先頭セルの背景も合わせる */
+.my-table.my-table-sticky-first tbody tr.is-unknown td:first-child {
+	background-color: var(--table-row-warn-bg);
+}
+
+.my-table.my-table-sticky-first tbody tr.is-wrong td:first-child {
+	background-color: var(--table-row-danger-bg);
+}
+
+/* UNKNOWNセルだけ濃い警告色で強調（行色よりひと段濃い） */
+.my-table td.is-unknown-cell {
+	font-weight: 800;
+	color: var(--table-row-warn-accent, #9a3412);
+	/* orange-800 */
+}
+
+/* hover時も色が落ちないように */
+.my-table tr.is-unknown:hover td.is-unknown-cell {
+	color: var(--table-row-warn-accent, #9a3412);
+}
+
+/* a 共通 */
+.my-table td a {
+	color: var(--link-color-secondary);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+.my-table td a:hover {
+	text-decoration: underline;
+	color: var(--link-color-secondary-hover);
+}
+
+
+/* ○/×を丸バッジに */
+.my-table .judge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.8em;
+	min-width: 1.8em;
+	height: 1.8em;
+	border-radius: 9999px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: .02em;
+	border: 1px solid transparent;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .12);
+}
+
+.my-table .judge.success {
+	background: var(--judge-success-bg, #10b981);
+	/* green-500 */
+	color: var(--judge-success-fg, #fff);
+	border-color: var(--judge-success-border, #059669);
+	/* green-600 */
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .08), inset 0 -1px 0 rgba(0, 0, 0, .06);
+}
+
+.my-table .judge.danger {
+	background: var(--judge-danger-bg, #ef4444);
+	/* red-500 */
+	color: var(--judge-danger-fg, #fff);
+	border-color: var(--judge-danger-border, #dc2626);
+	/* red-600 */
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .08), inset 0 -1px 0 rgba(0, 0, 0, .06);
+}

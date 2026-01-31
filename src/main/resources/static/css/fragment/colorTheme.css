@@ -1,0 +1,55 @@
+/* colorTheme.css */
+/* === 共通トランジション（main内テーマのみ対象）=== */
+:where(.my-theme-kurohon,
+	.my-theme-java-bronze,
+	.my-theme-java-silver,
+	.my-theme-java-gold) {
+	transition: background-color var(--transition-fast, .15s ease),
+		color var(--transition-fast, .15s ease),
+		border-color var(--transition-fast, .15s ease);
+}
+
+/* === 既存の修正（typo）=== */
+.my-theme-kurohon {
+	background-color: var(--color-kurohon);
+	color: var(--color-kurohon-text);
+	border: 1px solid var(--color-kurohon-border);
+}
+
+.my-theme-kurohon a:hover {
+	color: var(--color-kurohon-accent);
+}
+
+/* === Java資格カラー === */
+/* Bronze */
+.my-theme-java-bronze {
+	background-color: var(--color-java-bronze);
+	color: var(--color-java-bronze-text);
+	border: 1px solid var(--color-java-bronze-hover);
+}
+
+.my-theme-java-bronze:hover {
+	background-color: var(--color-java-bronze-hover);
+}
+
+/* Silver */
+.my-theme-java-silver {
+	background-color: var(--color-java-silver);
+	color: var(--color-java-silver-text);
+	border: 1px solid var(--color-java-silver-hover);
+}
+
+.my-theme-java-silver:hover {
+	background-color: var(--color-java-silver-hover);
+}
+
+/* Gold */
+.my-theme-java-gold {
+	background-color: var(--color-java-gold);
+	color: var(--color-java-gold-text);
+	border: 1px solid var(--color-java-gold-hover);
+}
+
+.my-theme-java-gold:hover {
+	background-color: var(--color-java-gold-hover);
+}

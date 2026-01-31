@@ -1,0 +1,6 @@
+INSERT INTO authority (id, name)
+VALUES
+  ('AU0001', 'ROLE_ADMIN'),
+  ('AU0002', 'ROLE_USER')
+ON CONFLICT (id) DO NOTHING;
+@@

@@ -1,0 +1,4 @@
+明日のタスク
+・Mapperの実装と関連項目のリファクタリング
+・AttemptSessionのService、repositoryなどの実装
+・パッケージ構造をapiとinternalのみにし、apiは外部と接続するためのinterface,internalはデフォルトクラスのみで構成

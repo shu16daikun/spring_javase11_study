@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<!-- head要素ここから -->
+
+<head th:replace="~{user/common :: user-header('ホーム画面', ~{::extraHead})}">
+	<!-- ページ固有の情報をheaderに追加 -->
+	<th:block th:fragment="extraHead">
+		<!-- 自作個別css -->
+		<link rel="stylesheet" media="all" th:href="@{/css/fragment/colorTheme.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/colorTheme.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/breadcrump.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/alert.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/rowCols.css}">
+		<link rel="stylesheet" media="all" th:href="@{/psfm/css/fragment/card.css}">
+		<!-- 自作個別js -->
+		<script type="module" th:src="@{/js/main-contents/user/home/controller.js}"></script>
+	</th:block>
+</head>
+<!-- head要素ここまで -->
+<!-- body要素ここから -->
+
+<body class="my-items-center-body">
+	<!-- navbar -->
+	<div th:replace="~{user/navbar :: user-navbar}"></div>
+	<!-- main-contents -->
+	<main class="my-container">
+		<!-- breadcrump -->
+		<div class="my-breadcrump-simple">
+			<nav>
+				<ol>
+					<li>ホーム</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- alert -->
+		<div class="alert-area" th:if="${errorMessage != null}">
+			<div th:if="${alertDanger}" class="my-alert-danger" th:data-text="${errorMessage}"></div>
+			<div th:if="${alertWarning}" class="my-alert-warning" th:data-text="${errorMessage}"></div>
+			<div th:if="${alertPrimary}" class="my-alert-primary" th:data-text="${errorMessage}"></div>
+		</div>
+
+		<!-- card -->
+		<div class="card-area">
+			<div class="my-row-cols-responsive-max-3">
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-kurohon"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">黒本問題集</div>
+						<p>Java資格勉強用の参考書「黒本」を用いて勉強できます。</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" th:href="@{/user/sankouBooks}">詳細へ</a>
+					</div>
+				</div>
+				<div class="my-card">
+					<div class="my-card-img-top my-theme-success"></div>
+					<div class="my-card-body">
+						<div class="my-card-title">自作問題集</div>
+						<p>暗記帳や、気になる単元の問題集を自作して勉強します。</p>
+						<p>**未実装**</p>
+					</div>
+					<div class="my-card-footer">
+						<a class="my-btn-primary" href="#">**未実装**</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<!-- browser-guard -->
+	<div th:replace="~{user/browser-guard :: user-browser-guard}"></div>
+	<!-- footer -->
+	<div th:replace="~{user/footer :: user-footer}"></div>
+</body>
+<!-- body要素ここまで -->
+
+</html>
