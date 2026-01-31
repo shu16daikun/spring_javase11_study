@@ -4,13 +4,13 @@ import { setCommonReady } from "/js/main-contents/user/common.js";
 import { getLoger } from "/psfm/js/common/loger.js";
 
 import { CONST } from "./const.js";
-import { ChapterForm } from "./form.js";
+import { AnswerForm } from "./form.js";
 
 /* 共通初期化 */
 setCommonReady(() => {
-	const LOG = getLoger("USER_CHAPTER");
+	const LOG = getLoger("USER_ANSWER");
 
-	const form = new ChapterForm($(CONST.SELECTOR.FORM));
+	const form = new AnswerForm($(CONST.SELECTOR.FORM));
 	const $list = $(CONST.SELECTOR.LIST_GROUP);
 
 	if ($list.length === 0) {
