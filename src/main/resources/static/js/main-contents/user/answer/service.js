@@ -104,7 +104,6 @@ export class AnswerService {
 					<button type="button" class="my-btn-dark" data-dismiss>&times;</button>
 				</div>
 				<div class="my-modal-body">
-<|diff_marker|> ADD A1180
 					<p id="${CONST.SELECTOR.MODAL_MESSAGE.replace('#', '')}">${CONST.TEXT.VALIDATION_DEFAULT}</p>
 				</div>
 				<div class="my-modal-footer">
