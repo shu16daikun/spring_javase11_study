@@ -19,7 +19,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 /* ===== [import] START ===== */
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 /* ===== [import] END ===== */
 

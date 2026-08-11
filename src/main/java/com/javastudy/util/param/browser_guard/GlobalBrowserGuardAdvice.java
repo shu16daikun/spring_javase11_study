@@ -10,7 +10,7 @@ import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
 import com.javastudy.util.path.AppPath;
-import com.util.security.browser_guard.BrowserGuard;
+import com.my.util.security.browser_guard.BrowserGuard;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

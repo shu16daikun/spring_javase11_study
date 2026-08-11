@@ -6,11 +6,9 @@ import org.springframework.stereotype.Component;
 import com.javastudy.components.sankou_book_color.api.domain.SankouBookColorEnum;
 import com.javastudy.components.sankou_book_color.api.exception.SankouBookColorException;
 import com.javastudy.components.sankou_book_color.internal.SankouBookColorErrorCode.SankouBookColorDbgMsg;
-import com.util.mapper.ToEnumMapper;
 
 @Component
-public class ToSankouBookColorEnumMapper
-	implements ToEnumMapper<SankouBookColorEntity, SankouBookColorEnum> {
+public class ToSankouBookColorEnumMapper {
 
 	private boolean isSameName(final SankouBookColorEnum e, final String other) {
 		return e.getName().equals(other);
@@ -29,7 +27,6 @@ public class ToSankouBookColorEnumMapper
 			SankouBookColorDbgMsg.notEntity("name", name));
 	}
 
-	@Override
 	public SankouBookColorEnum fromEntity(final SankouBookColorEntity entity) {
 		return this.fromName(entity.getName());
 	}

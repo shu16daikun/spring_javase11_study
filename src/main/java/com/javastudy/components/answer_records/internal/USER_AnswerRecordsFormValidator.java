@@ -2,7 +2,7 @@ package com.javastudy.components.answer_records.internal;
 
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;

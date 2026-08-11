@@ -1,7 +1,7 @@
 package com.javastudy.components.attempt_session.api.exception;
 
-import com.exception.contents.MyRuntimeException;
-import com.exception.error_code.ErrorCode;
+import com.my.exception.MyRuntimeException;
+import com.my.exception.error_code.ErrorCode;
 
 /** 解答セッション例外 */
 public final class AttemptSessionException extends MyRuntimeException {

@@ -21,7 +21,7 @@ package com.javastudy.components.sankou_books.internal;
 import com.javastudy.components.sankou_books.api.dto.USER_SankouBooksViewDto;
 import com.javastudy.components.sankou_books.api.param.SankouBooksObjParam;
 import com.javastudy.components.sankou_books.api.service.SankouBooksService;
-import com.util.security.role.RoleUtil;
+import com.my.util.security.role.RoleUtil;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
 package com.javastudy.components.answer_records.internal;
 
 import com.javastudy.components.answer_records.internal.AnswerRecordsDB.AnswerRecordsColumn;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

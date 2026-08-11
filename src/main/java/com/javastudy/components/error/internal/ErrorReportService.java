@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.util.io.MyCsvExporter;
+import com.my.util.io.MyCsvExporter;
 
 /**
  * traceId に紐づく近傍行を、複数ログ（本体＋client-js）から横断抽出して CSV 化。

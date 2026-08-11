@@ -1,7 +1,7 @@
 // com.javastudy.components.sankou_books.internal.SankouBooksIdBridge
 package com.javastudy.components.sankou_books.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /**
  * 【機能】SankouBooks IDブリッジ（EntityId ↔ ViewId）

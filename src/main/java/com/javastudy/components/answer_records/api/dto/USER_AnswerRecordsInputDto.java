@@ -1,6 +1,6 @@
 package com.javastudy.components.answer_records.api.dto;
 
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import jakarta.validation.constraints.NotBlank;
 

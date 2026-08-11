@@ -1,8 +1,8 @@
 // com.javastudy.components.sankou_books.api.exception.SankouBooksException
 package com.javastudy.components.sankou_books.api.exception;
 
-import com.exception.contents.MyRuntimeException;
-import com.exception.error_code.ErrorCode;
+import com.my.exception.MyRuntimeException;
+import com.my.exception.error_code.ErrorCode;
 
 /**
  * 【機能】参考書ドメイン例外

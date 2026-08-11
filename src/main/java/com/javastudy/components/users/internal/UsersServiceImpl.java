@@ -27,8 +27,8 @@ import com.javastudy.components.weakness.api.service.WeaknessRefLookUp;
 import com.login.components.user.api.dto.MyUsersInputDto;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 /* ===== [import] END ===== */
 
 import lombok.AllArgsConstructor;
@@ -49,7 +49,7 @@ public class UsersServiceImpl implements UsersService {
 	private final WeaknessRefLookUp weaknessRefLookup;
 
 	private String getLoginUserViewId() {
-		return this.myUsersService.getLoginUser().viewId();
+		return this.myUsersService.getLoginUser().systemId();
 	}
 
 	private String trim(final String s) {
@@ -60,7 +60,7 @@ public class UsersServiceImpl implements UsersService {
 	private ADMIN_UsersViewDto toAdmin(final MyUsersViewDto v) {
 		if (MyType.isNull(v))
 			return null;
-		final String entityId = this.myUsersService.getEntityId(v.viewId());
+		final String entityId = this.myUsersService.getEntityId(v.systemId());
 		final ADMIN_AuthorityViewDto auth = this.authorityService
 			.toAdminViewDto(v.authorityViewDto());
 		final boolean inUse = this.isUse(entityId);
@@ -122,8 +122,8 @@ public class UsersServiceImpl implements UsersService {
 		// ② user の entityId を一括解決（viewId→entityId）
 		final Map<String, String> userEntityIdByViewId = sorted.stream()
 			.collect(Collectors.toMap(
-				MyUsersViewDto::viewId,
-				v -> this.myUsersService.getEntityId(v.viewId()),
+				MyUsersViewDto::systemId,
+				v -> this.myUsersService.getEntityId(v.systemId()),
 				(a, b) -> a,
 				java.util.LinkedHashMap::new // 順序維持
 			));
@@ -131,7 +131,7 @@ public class UsersServiceImpl implements UsersService {
 
 		// ③ 権限：重複排除して entityId 化 → ADMIN 権限を一括取得
 		final Set<String> authViewIds = sorted.stream()
-			.map(v -> v.authorityViewDto().viewId())
+			.map(v -> v.authorityViewDto().systemId())
 			.collect(Collectors.toSet());
 		final Map<String, String> authEntityIdByViewId = authViewIds.stream()
 			.collect(Collectors.toMap(vid -> vid, vid -> this.authorityService.getEntityId(vid)));
@@ -148,8 +148,9 @@ public class UsersServiceImpl implements UsersService {
 		// ⑤ DTO 変換（権限は adminAuthMap、使用中は used を参照）
 		return sorted.stream()
 			.map(v -> {
-				final String userId = userEntityIdByViewId.get(v.viewId());
-				final String authEntityId = authEntityIdByViewId.get(v.authorityViewDto().viewId());
+				final String userId = userEntityIdByViewId.get(v.systemId());
+				final String authEntityId = authEntityIdByViewId
+					.get(v.authorityViewDto().systemId());
 				final ADMIN_AuthorityViewDto adminAuth = adminAuthMap.get(authEntityId);
 				final boolean inUse = used.contains(userId);
 				return this.toViewDtoMapper.fromMyViewDto(v, userId, adminAuth, inUse);
@@ -242,7 +243,7 @@ public class UsersServiceImpl implements UsersService {
 
 		// ② 権限IDを一括抽出（My→entityId 化）→ ADMIN 権限を一括取得
 		final Set<String> authIds = usersMap.values().stream()
-			.map(v -> this.authorityService.getEntityId(v.authorityViewDto().viewId()))
+			.map(v -> this.authorityService.getEntityId(v.authorityViewDto().systemId()))
 			.collect(Collectors.toSet());
 		final Map<String, ADMIN_AuthorityViewDto> adminAuthMap = this.authorityService
 			.getAdminViewDtoMapByIds(authIds);
@@ -263,7 +264,7 @@ public class UsersServiceImpl implements UsersService {
 				final MyUsersViewDto v = e.getValue();
 				final String userEntityId = e.getKey();
 				final String authEntityId = this.authorityService
-					.getEntityId(v.authorityViewDto().viewId());
+					.getEntityId(v.authorityViewDto().systemId());
 				final ADMIN_AuthorityViewDto adminAuth = adminAuthMap.get(authEntityId);
 				final boolean inUse = used.contains(userEntityId);
 				return this.toViewDtoMapper.fromMyViewDto(v, userEntityId, adminAuth, inUse);

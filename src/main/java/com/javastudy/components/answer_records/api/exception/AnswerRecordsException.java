@@ -1,7 +1,7 @@
 package com.javastudy.components.answer_records.api.exception;
 
-import com.exception.contents.MyRuntimeException;
-import com.exception.error_code.ErrorCode;
+import com.my.exception.MyRuntimeException;
+import com.my.exception.error_code.ErrorCode;
 
 /** 解答履歴例外 */
 public final class AnswerRecordsException extends MyRuntimeException {

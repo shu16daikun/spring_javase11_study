@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.role.RoleUtil;
+import com.my.util.security.role.RoleUtil;
 
 import lombok.RequiredArgsConstructor;
 

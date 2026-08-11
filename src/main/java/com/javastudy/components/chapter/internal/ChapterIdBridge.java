@@ -1,6 +1,6 @@
 package com.javastudy.components.chapter.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /* 機能：Chapter IDブリッジ */
 final class ChapterIdBridge {

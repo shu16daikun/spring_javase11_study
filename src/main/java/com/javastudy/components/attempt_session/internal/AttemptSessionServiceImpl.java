@@ -5,6 +5,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,11 +23,9 @@ import com.javastudy.components.users.api.dto.ADMIN_UsersViewDto;
 import com.javastudy.components.users.api.service.UsersService;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.id.DbIdSequence;
-import com.util.type.MyType;
+import com.my.util.security.id.DbIdSequence;
+import com.my.util.type.MyType;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import lombok.AllArgsConstructor;
 
 /**
@@ -240,7 +241,7 @@ public class AttemptSessionServiceImpl implements AttemptSessionService {
 				AttemptSessionDbgMsg.duplicateId(newId));
 		}
 
-		final String userId = this.usersService.getEntityId(users.viewId());
+		final String userId = this.usersService.getEntityId(users.systemId());
 		final String bookId = this.sankouBooksService.getEntityId(books.viewId());
 
 		return AttemptSessionEntity.builder()

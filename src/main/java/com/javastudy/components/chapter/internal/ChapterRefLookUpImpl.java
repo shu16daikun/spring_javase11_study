@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javastudy.components.chapter.api.service.ChapterRefLookUp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 /* ===== [import] END ===== */

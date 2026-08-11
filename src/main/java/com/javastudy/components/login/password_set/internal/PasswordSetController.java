@@ -20,8 +20,8 @@ import com.login.components.authority.api.service.MyAuthorityService;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyPasswordSetService;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.browser_guard.BrowserGuard;
-import com.util.type.MyType;
+import com.my.util.security.browser_guard.BrowserGuard;
+import com.my.util.type.MyType;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

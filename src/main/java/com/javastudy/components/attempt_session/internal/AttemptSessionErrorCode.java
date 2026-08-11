@@ -1,8 +1,8 @@
 // com.javastudy.components.attempt_session.internal.AttemptSessionErrorCode
 package com.javastudy.components.attempt_session.internal;
 
-import com.exception.error_code.ErrorCode;
-import com.exception.error_code.HttpStatusCode;
+import com.my.exception.error_code.ErrorCode;
+import com.my.exception.error_code.HttpStatusCode;
 
 import lombok.AllArgsConstructor;
 

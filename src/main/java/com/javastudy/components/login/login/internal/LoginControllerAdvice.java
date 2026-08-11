@@ -32,7 +32,7 @@ import com.javastudy.components.login.login.api.param.LoginFormParam;
 import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.RequiredArgsConstructor;
 

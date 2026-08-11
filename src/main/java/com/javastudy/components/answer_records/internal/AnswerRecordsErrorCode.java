@@ -1,8 +1,8 @@
 // com.javastudy.components.answer_records.internal.AnswerRecordsErrorCode
 package com.javastudy.components.answer_records.internal;
 
-import com.exception.error_code.ErrorCode;
-import com.exception.error_code.HttpStatusCode;
+import com.my.exception.error_code.ErrorCode;
+import com.my.exception.error_code.HttpStatusCode;
 
 import lombok.AllArgsConstructor;
 

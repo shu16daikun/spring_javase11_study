@@ -1,7 +1,7 @@
 package com.javastudy.components.kurohon_questions.api.exception;
 
-import com.exception.contents.MyRuntimeException;
-import com.exception.error_code.ErrorCode;
+import com.my.exception.MyRuntimeException;
+import com.my.exception.error_code.ErrorCode;
 
 /** 黒本問題ドメイン例外 */
 public final class KurohonQuestionsException extends MyRuntimeException {

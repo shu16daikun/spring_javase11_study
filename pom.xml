@@ -22,10 +22,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- 自作モジュール -->
-    <my_util.version>0.0.7</my_util.version>
-    <my_exception.version>0.0.3</my_exception.version>
+    <my_util.version>0.1.1</my_util.version>
+    <my_exception.version>0.0.4</my_exception.version>
     <my_fragment.version>0.1.9</my_fragment.version>
-    <my_login.version>0.1.5</my_login.version>
+    <my_login.version>0.2.0</my_login.version>
     <my_loger.version>0.0.1</my_loger.version>
 
     <!-- Spotless / Lombok -->
@@ -37,12 +37,12 @@
   <dependencies>
     <!-- custom -->
     <dependency>
-      <groupId>com.exception</groupId>
+      <groupId>com.my.exception</groupId>
       <artifactId>my_exception</artifactId>
       <version>${my_exception.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.util</groupId>
+      <groupId>com.my.util</groupId>
       <artifactId>my_util</artifactId>
       <version>${my_util.version}</version>
     </dependency>
@@ -61,7 +61,6 @@
       <artifactId>my_loger</artifactId>
       <version>${my_loger.version}</version>
     </dependency>
-
     <!-- Spring Boot -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

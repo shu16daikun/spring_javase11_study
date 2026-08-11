@@ -10,8 +10,8 @@ import java.util.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.util.security.id.ViewIdUtil;
-import com.util.type.MyType;
+import com.my.util.security.id.ViewIdUtil;
+import com.my.util.type.MyType;
 
 import jakarta.annotation.PostConstruct;
 

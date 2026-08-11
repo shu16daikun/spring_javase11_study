@@ -1,8 +1,8 @@
 // com.javastudy.components.sankou_books.internal.SankouBooksErrorCode
 package com.javastudy.components.sankou_books.internal;
 
-import com.exception.error_code.ErrorCode;
-import com.exception.error_code.HttpStatusCode;
+import com.my.exception.error_code.ErrorCode;
+import com.my.exception.error_code.HttpStatusCode;
 
 import lombok.AllArgsConstructor;
 

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.javastudy.components.chapter.api.dto.USER_ChapterViewDto;
 import com.javastudy.components.sankou_books.api.dto.USER_SankouBooksViewDto;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 @Component
 public class ToUSER_ChapterViewDtoMapper {

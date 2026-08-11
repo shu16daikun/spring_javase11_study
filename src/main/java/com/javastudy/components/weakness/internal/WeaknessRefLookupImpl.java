@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javastudy.components.weakness.api.service.WeaknessRefLookUp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.RequiredArgsConstructor;
 

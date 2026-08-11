@@ -3,7 +3,7 @@ package com.javastudy.components.answer_records.internal;
 import com.javastudy.components.answer_records.api.dto.USER_AnswerRecordsInputDto;
 import com.javastudy.components.kurohon_questions.api.dto.USER_KurohonQuestionsViewDto;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;

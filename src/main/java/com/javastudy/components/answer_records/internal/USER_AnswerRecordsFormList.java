@@ -1,7 +1,7 @@
 package com.javastudy.components.answer_records.internal;
 
 import com.javastudy.components.answer_records.api.dto.USER_AnswerRecordsInputDto;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;

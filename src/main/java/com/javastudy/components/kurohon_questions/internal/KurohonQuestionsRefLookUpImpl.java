@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javastudy.components.kurohon_questions.api.service.KurohonQuestionsRefLookUp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 

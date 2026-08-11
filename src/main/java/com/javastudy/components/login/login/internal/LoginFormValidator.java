@@ -7,7 +7,7 @@ import org.springframework.validation.Validator;
 
 import com.javastudy.components.login.login.api.param.LoginFormParam;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 /**
  * ログインフォームのサーバサイド検証。

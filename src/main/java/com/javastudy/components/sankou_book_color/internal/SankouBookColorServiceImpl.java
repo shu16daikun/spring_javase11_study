@@ -17,8 +17,8 @@ import com.javastudy.components.sankou_book_color.api.service.SankouBookColorSer
 import com.javastudy.components.sankou_book_color.internal.SankouBookColorDB.SankouBookColorIdParam;
 import com.javastudy.components.sankou_book_color.internal.SankouBookColorErrorCode.SankouBookColorDbgMsg;
 import com.javastudy.components.sankou_books.api.service.SankouBooksRefLookUp;
-import com.util.security.id.DbIdSequence;
-import com.util.type.MyType;
+import com.my.util.security.id.DbIdSequence;
+import com.my.util.type.MyType;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

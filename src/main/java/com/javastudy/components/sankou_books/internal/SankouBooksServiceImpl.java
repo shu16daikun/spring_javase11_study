@@ -24,9 +24,9 @@ import com.javastudy.components.sankou_books.api.exception.SankouBooksException;
 import com.javastudy.components.sankou_books.api.service.SankouBooksService;
 import com.javastudy.components.sankou_books.internal.SankouBooksDB.SankouBooksIdParam;
 import com.javastudy.components.sankou_books.internal.SankouBooksErrorCode.SankouBooksDbgMsg;
-import com.util.security.id.DbIdSequence;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.id.DbIdSequence;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

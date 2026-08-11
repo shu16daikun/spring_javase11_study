@@ -2,7 +2,7 @@ package com.javastudy.components.sankou_books.internal;
 
 import com.javastudy.util.path.AppPath;
 import com.javastudy.util.path.TempPath;
-import com.util.security.role.RoleUtil;
+import com.my.util.security.role.RoleUtil;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

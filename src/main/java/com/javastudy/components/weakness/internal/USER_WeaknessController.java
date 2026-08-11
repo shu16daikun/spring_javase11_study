@@ -1,6 +1,15 @@
 // com.javastudy.components.weakness.internal.USER_WeaknessController
 package com.javastudy.components.weakness.internal;
 
+import java.util.List;
+
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.javastudy.components.weakness.api.dto.USER_WeaknessViewDto.USER_WeaknessChapterViewDto;
 import com.javastudy.components.weakness.api.dto.USER_WeaknessViewDto.USER_WeaknessQuestionsViewDto;
 import com.javastudy.components.weakness.api.service.WeaknessService;
@@ -8,16 +17,10 @@ import com.javastudy.util.path.AppPath;
 import com.javastudy.util.path.TempPath;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
-import java.util.List;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
+
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * ユーザー向け：弱点分析 画面コントローラ。
@@ -72,11 +75,11 @@ public class USER_WeaknessController {
 
 		// 章別（加重平均・弱い順）
 		final List<USER_WeaknessChapterViewDto> wcList = weaknessService
-			.listWeakChapters(login.viewId(), bookViewId);
+			.listWeakChapters(login.systemId(), bookViewId);
 
 		// 問題別（MIN_ATTEMPTS 以上・弱い順・上限0=無制限）
 		final List<USER_WeaknessQuestionsViewDto> wqList = weaknessService
-			.listWeakQuestions(login.viewId(), bookViewId, MIN_ATTEMPTS, 0);
+			.listWeakQuestions(login.systemId(), bookViewId, MIN_ATTEMPTS, 0);
 
 		model.addAttribute(ATTR_WC_LIST, wcList);
 		model.addAttribute(ATTR_WQ_LIST, wqList);

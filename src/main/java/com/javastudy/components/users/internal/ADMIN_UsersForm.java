@@ -13,14 +13,15 @@
  */
 package com.javastudy.components.users.internal;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import com.javastudy.components.authority.api.dto.ADMIN_AuthorityViewDto;
 import com.javastudy.components.users.api.dto.ADMIN_UsersViewDto;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.validation.username.ValidUsername;
 import com.login.components.user.api.dto.MyUsersInputDto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -67,14 +68,15 @@ public class ADMIN_UsersForm {
 
 	/* ===== [public/protected] START ===== */
 	public MyUsersInputDto toCreateInputDto() {
-		return new MyUsersInputDto(null, this.trim(this.username), this.authorityViewId);
+		return new MyUsersInputDto(null, this.trim(this.username), this.authorityViewId, 1L);
 	}
 
 	public MyUsersInputDto toUpdateInputDto(final String viewId) {
 		return new MyUsersInputDto(
 			viewId,
 			this.trim(this.username),
-			this.authorityViewId);
+			this.authorityViewId,
+			1L);
 	}
 
 	public static ADMIN_UsersForm fromViewDto(final ADMIN_UsersViewDto v) {

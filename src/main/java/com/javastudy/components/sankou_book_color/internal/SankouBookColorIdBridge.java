@@ -1,6 +1,6 @@
 package com.javastudy.components.sankou_book_color.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /* 機能：SankouBookColor IDブリッジ */
 final class SankouBookColorIdBridge {

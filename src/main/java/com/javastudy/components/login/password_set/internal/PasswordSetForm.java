@@ -1,11 +1,13 @@
 // PasswordSetForm.java
 package com.javastudy.components.login.password_set.internal;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.validation.password.ValidPassword;
 import com.login.components.user.api.dto.MyPasswordSetInputDto;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,7 +42,7 @@ public class PasswordSetForm {
 	 * @return MyPasswordSetInputDto（password / passwordCheck）
 	 */
 	MyPasswordSetInputDto toInputDto() {
-		return new MyPasswordSetInputDto(password, passwordCheck);
+		return new MyPasswordSetInputDto(password, passwordCheck, 1L);
 	}
 	/* ===== [public/protected] END ===== */
 }

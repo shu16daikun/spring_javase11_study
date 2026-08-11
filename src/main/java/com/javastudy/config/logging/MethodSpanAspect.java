@@ -9,7 +9,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import com.my.loger.api.LogSpan;
+import com.my.loger.span.LogSpan;
 
 @Aspect
 @Component

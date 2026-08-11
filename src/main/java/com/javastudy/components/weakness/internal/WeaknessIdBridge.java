@@ -1,7 +1,7 @@
 // com.javastudy.components.weakness.internal.WeaknessIdBridge
 package com.javastudy.components.weakness.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /**
  * Weaknessの EntityId ↔ ViewId 変換ブリッジ。

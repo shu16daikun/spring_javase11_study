@@ -1,6 +1,6 @@
 package com.javastudy.components.answer_records.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /* 機能：AnswerRecords IDブリッジ */
 final class AnswerRecordsIdBridge {

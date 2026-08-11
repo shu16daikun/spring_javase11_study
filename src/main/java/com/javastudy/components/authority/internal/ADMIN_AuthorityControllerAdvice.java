@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.javastudy.util.param.prop_key.PropKey;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import jakarta.servlet.http.HttpSession;
 

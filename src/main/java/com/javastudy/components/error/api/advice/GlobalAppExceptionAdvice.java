@@ -20,13 +20,13 @@ package com.javastudy.components.error.api.advice;
 /* ===== [import] START ===== */
 import static org.slf4j.MDC.*;
 
-import com.exception.contents.MyRuntimeException;
+import com.my.exception.MyRuntimeException;
 import com.javastudy.components.error.api.dto.ErrorViewDto;
 import com.javastudy.components.error.api.service.ErrorStateService;
 import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
 import com.javastudy.util.path.AppPath;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

@@ -35,7 +35,7 @@ import com.javastudy.components.error.api.service.ErrorStateService;
 import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
 import com.javastudy.util.path.AppPath;
-import com.util.security.role.RoleUtil;
+import com.my.util.security.role.RoleUtil;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

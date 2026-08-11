@@ -18,7 +18,7 @@ import com.login.components.authority.api.dto.MyAuthorityViewDto;
 import com.login.components.authority.api.service.MyAuthorityService;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyUsersRefLookUp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 
@@ -39,7 +39,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 	private ADMIN_AuthorityViewDto toAdmin(final MyAuthorityViewDto v) {
 		if (MyType.isNull(v))
 			return null;
-		final String viewId = v.viewId();
+		final String viewId = v.systemId();
 		final String entityId = this.myService.getEntityId(viewId);
 		final boolean isUse = this.myService.isUse(entityId);
 		return this.toAdminViewDtoMapper.fromMyViewDto(v, entityId, isUse);

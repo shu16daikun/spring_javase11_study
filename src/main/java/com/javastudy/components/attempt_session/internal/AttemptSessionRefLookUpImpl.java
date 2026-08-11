@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javastudy.components.attempt_session.api.service.AttemptSessionRefLookUp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 

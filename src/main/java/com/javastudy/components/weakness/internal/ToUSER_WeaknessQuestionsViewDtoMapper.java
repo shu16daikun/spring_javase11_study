@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.javastudy.components.chapter.api.dto.USER_ChapterViewDto;
 import com.javastudy.components.kurohon_questions.api.dto.USER_KurohonQuestionsViewDto;
 import com.javastudy.components.weakness.api.dto.USER_WeaknessViewDto.USER_WeaknessQuestionsViewDto;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 @Component
 public class ToUSER_WeaknessQuestionsViewDtoMapper {

@@ -6,7 +6,7 @@ import com.javastudy.components.answer_records.api.dto.USER_AnswerRecordsViewDto
 import com.javastudy.components.chapter.api.dto.USER_ChapterViewDto;
 import com.javastudy.components.kurohon_questions.api.dto.USER_KurohonQuestionsViewDto;
 import com.login.components.user.api.dto.MyUsersViewDto;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 /**
  * AnswerRecordsEntity → USER_AnswerRecordsViewDto 変換（純粋変換：DI依存なし）。

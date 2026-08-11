@@ -8,8 +8,8 @@ import org.springframework.validation.Validator;
 
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 

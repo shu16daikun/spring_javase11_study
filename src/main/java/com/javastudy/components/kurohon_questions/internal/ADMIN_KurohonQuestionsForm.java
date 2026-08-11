@@ -5,7 +5,7 @@ import com.javastudy.components.kurohon_questions.api.dto.ADMIN_KurohonQuestions
 import com.javastudy.components.kurohon_questions.api.dto.ADMIN_KurohonQuestionsViewDto;
 import com.javastudy.components.sankou_books.api.dto.ADMIN_SankouBooksViewDto;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
-import com.util.zero_padding.ZeroPadding;
+import com.my.util.zero_padding.ZeroPadding;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

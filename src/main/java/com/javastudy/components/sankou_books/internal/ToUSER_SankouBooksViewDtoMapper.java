@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.javastudy.components.sankou_book_color.api.domain.SankouBookColorEnum;
 import com.javastudy.components.sankou_books.api.dto.USER_SankouBooksViewDto;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 @Component
 public class ToUSER_SankouBooksViewDtoMapper {

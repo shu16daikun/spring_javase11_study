@@ -39,7 +39,7 @@ public class ToADMIN_AuthorityViewDtoMapper {
 		final String entityId,
 		final boolean isUse) {
 
-		final String viewId = myViewDto.viewId();
+		final String viewId = myViewDto.systemId();
 		return new ADMIN_AuthorityViewDto(
 			entityId,
 			viewId,

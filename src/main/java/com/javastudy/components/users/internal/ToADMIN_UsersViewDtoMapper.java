@@ -34,7 +34,7 @@ public class ToADMIN_UsersViewDtoMapper {
 		final boolean isUse) {
 		return new ADMIN_UsersViewDto(
 			entityId,
-			myViewDto.viewId(),
+			myViewDto.systemId(),
 			myViewDto.username(),
 			authorityViewDto,
 			myViewDto.isFirstLogin(),

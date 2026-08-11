@@ -1,8 +1,8 @@
 // com.javastudy.components.kurohon_questions.internal.KurohonQuestionsErrorCode
 package com.javastudy.components.kurohon_questions.internal;
 
-import com.exception.error_code.ErrorCode;
-import com.exception.error_code.HttpStatusCode;
+import com.my.exception.error_code.ErrorCode;
+import com.my.exception.error_code.HttpStatusCode;
 
 import lombok.AllArgsConstructor;
 

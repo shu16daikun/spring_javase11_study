@@ -1,6 +1,6 @@
 package com.javastudy.components.kurohon_questions.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 /* 機能：KurohonQuestions IDブリッジ */
 final class KurohonQuestionsIdBridge {

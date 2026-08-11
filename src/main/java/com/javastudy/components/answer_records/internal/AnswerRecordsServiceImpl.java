@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,12 +33,10 @@ import com.javastudy.components.sankou_books.api.service.SankouBooksService;
 import com.javastudy.components.users.api.dto.ADMIN_UsersViewDto;
 import com.javastudy.components.users.api.service.UsersService;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.id.DbIdSequence;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.id.DbIdSequence;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -203,7 +204,7 @@ public class AnswerRecordsServiceImpl implements AnswerRecordsService {
 		}
 
 		final String loginUserId = this.usersService
-			.getEntityId(this.usersService.getLoginUser().viewId());
+			.getEntityId(this.usersService.getLoginUser().systemId());
 		final String kqId = this.questionsService.getEntityId(MyType.orEmpty(dto.questionViewId()));
 		final String chId = this.chapterService.getEntityId(MyType.orEmpty(dto.chapterViewId()));
 		final String sbId = this.booksService.getEntityId(MyType.orEmpty(dto.sankouBookViewId()));

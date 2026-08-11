@@ -18,7 +18,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 @Component
 public class ADMIN_ChapterFormValidator implements Validator {

@@ -16,11 +16,11 @@ package com.javastudy.validation.authority_system_name;
 
 import java.util.regex.Pattern;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /* ===== [import] END ===== */
 
@@ -58,7 +58,7 @@ public class AuthoritySystemNamePolicyValidator
 
 	@Override
 	public boolean isValid(final String value, final ConstraintValidatorContext ctx) {
-		if (com.util.type.MyType.isBlank(value)) {
+		if (com.my.util.type.MyType.isBlank(value)) {
 			return true; // @NotBlank と組み合わせ前提
 		}
 		final String v = value.trim();

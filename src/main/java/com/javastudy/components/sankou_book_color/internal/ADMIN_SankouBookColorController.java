@@ -31,9 +31,9 @@ import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
 import com.javastudy.util.path.AppPath;
 import com.javastudy.util.path.TempPath;
-import com.util.security.browser_guard.BrowserGuard;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.browser_guard.BrowserGuard;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;

@@ -22,8 +22,7 @@ import com.javastudy.components.chapter.api.dto.ADMIN_ChapterViewDto;
 import com.javastudy.components.kurohon_questions.api.dto.ADMIN_KurohonQuestionsViewDto;
 import com.javastudy.components.sankou_books.api.dto.ADMIN_SankouBooksViewDto;
 import com.javastudy.components.users.api.dto.ADMIN_UsersViewDto;
-import com.util.mapper.ToViewDtoMapper;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 
 /* ===== [import] START ===== */
 // import は明示指定（ワイルドカード禁止）
@@ -36,10 +35,8 @@ import com.util.type.MyType;
  * 備考 : DTO は record を用いる
  */
 @Component
-public class ToADMIN_AnswerRecordsViewDtoMapper
-	implements ToViewDtoMapper<AnswerRecordsEntity, ADMIN_AnswerRecordsViewDto> {
+public class ToADMIN_AnswerRecordsViewDtoMapper {
 
-	@Override
 	public ADMIN_AnswerRecordsViewDto fromEntity(final AnswerRecordsEntity entity) {
 		throw new UnsupportedOperationException(
 			"Use fromEntity(entity, usersView, booksView, chapterView, questionsView, sessionView).");

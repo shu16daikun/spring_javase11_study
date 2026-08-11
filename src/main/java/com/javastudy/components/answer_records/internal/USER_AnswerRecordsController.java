@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.exception.util.param.MyExceptionParam;
 import com.javastudy.components.answer_records.api.dto.USER_AnswerRecordsStatsViewDto;
 import com.javastudy.components.answer_records.api.param.AnswerRecordsObjParam;
 import com.javastudy.components.answer_records.api.service.AnswerRecordsService;
@@ -37,13 +39,10 @@ import com.javastudy.util.path.AppPath;
 import com.javastudy.util.path.TempPath;
 import com.login.components.user.api.dto.MyUsersViewDto;
 import com.login.components.user.api.service.MyUsersService;
-import com.util.security.browser_guard.BrowserGuard;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyConst;
-import com.util.type.MyType;
+import com.my.util.security.browser_guard.BrowserGuard;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
-import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -159,7 +158,7 @@ public class USER_AnswerRecordsController {
 		final String guardCode = BrowserGuard.resolveCode(rawGuard);
 		if (MyType.isNotEqual(guardCode, BrowserGuard.ok())) {
 			// 直接叩き・戻る／進むなどは書籍トップへ退避
-			redirect.addFlashAttribute(MyExceptionParam.ALERT_DANGER, MyConst.TRUE);
+			redirect.addFlashAttribute("alert-danger", true);
 			redirect.addFlashAttribute(BrowserGuard.PARAM, BrowserGuard.invalidFlow());
 			return AppPath.R_USER;
 		}
@@ -201,7 +200,7 @@ public class USER_AnswerRecordsController {
 		final String asViewId = (String) session.getAttribute(AttemptSessionObjParam.VIEW_ID);
 		if (asViewId == null) {
 			// attemptSession 無しは不正フロー寄りなので invalidFlow に寄せて章へ戻す
-			redirect.addFlashAttribute(MyExceptionParam.ALERT_DANGER, MyConst.TRUE);
+			redirect.addFlashAttribute("alert-danger", true);
 			redirect.addFlashAttribute(BrowserGuard.PARAM, BrowserGuard.invalidFlow());
 			return AppPath.R_USER;
 		}

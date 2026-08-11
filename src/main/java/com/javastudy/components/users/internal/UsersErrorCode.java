@@ -1,8 +1,8 @@
 // com.javastudy.components.users.internal.UsersErrorCode
 package com.javastudy.components.users.internal;
 
-import com.exception.error_code.ErrorCode;
-import com.exception.error_code.HttpStatusCode;
+import com.my.exception.error_code.ErrorCode;
+import com.my.exception.error_code.HttpStatusCode;
 
 import lombok.AllArgsConstructor;
 

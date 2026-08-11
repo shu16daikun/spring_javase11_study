@@ -24,8 +24,8 @@ import com.javastudy.components.weakness.api.dto.USER_WeaknessViewDto.USER_Weakn
 import com.javastudy.components.weakness.api.exception.WeaknessException;
 import com.javastudy.components.weakness.api.service.WeaknessService;
 import com.javastudy.components.weakness.internal.WeaknessErrorCode.WeaknessDbgMsg;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import lombok.AllArgsConstructor;
 

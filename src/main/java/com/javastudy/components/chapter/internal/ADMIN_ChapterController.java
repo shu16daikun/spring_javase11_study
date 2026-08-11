@@ -13,6 +13,9 @@ package com.javastudy.components.chapter.internal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +27,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.exception.util.param.MyExceptionParam;
 import com.javastudy.components.chapter.api.dto.ADMIN_ChapterViewDto;
 import com.javastudy.components.chapter.api.param.ChapterObjParam;
 import com.javastudy.components.chapter.api.service.ChapterService;
@@ -35,13 +37,10 @@ import com.javastudy.util.param.prop_key.PropKey;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
 import com.javastudy.util.path.AppPath;
 import com.javastudy.util.path.TempPath;
-import com.util.security.browser_guard.BrowserGuard;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyConst;
-import com.util.type.MyType;
+import com.my.util.security.browser_guard.BrowserGuard;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
-import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -86,7 +85,7 @@ public class ADMIN_ChapterController {
 		final String guardCode = BrowserGuard.resolveCode(rawGuard);
 		// 2) OK 以外（NONE 含む）は不正フローとして一覧へ退避
 		if (MyType.isNotEqual(guardCode, BrowserGuard.ok())) {
-			redirect.addFlashAttribute(MyExceptionParam.ALERT_DANGER, MyConst.TRUE);
+			redirect.addFlashAttribute("alert-danger", true);
 			redirect.addFlashAttribute(BrowserGuard.PARAM, BrowserGuard.invalidFlow());
 			return AppPath.R_ADMIN;
 		}
@@ -165,7 +164,7 @@ public class ADMIN_ChapterController {
 		final String guardCode = BrowserGuard.resolveCode(rawGuard);
 		// 2) OK 以外（NONE 含む）は不正フローとして一覧へ退避
 		if (MyType.isNotEqual(guardCode, BrowserGuard.ok())) {
-			redirect.addFlashAttribute(MyExceptionParam.ALERT_DANGER, MyConst.TRUE);
+			redirect.addFlashAttribute("alert-danger", true);
 			redirect.addFlashAttribute(BrowserGuard.PARAM, BrowserGuard.invalidFlow());
 			return AppPath.R_ADMIN;
 		}

@@ -1,7 +1,7 @@
 package com.javastudy.components.sankou_book_color.api.exception;
 
-import com.exception.contents.MyRuntimeException;
-import com.exception.error_code.ErrorCode;
+import com.my.exception.MyRuntimeException;
+import com.my.exception.error_code.ErrorCode;
 
 /** 参考書カラー例外 */
 public final class SankouBookColorException extends MyRuntimeException {

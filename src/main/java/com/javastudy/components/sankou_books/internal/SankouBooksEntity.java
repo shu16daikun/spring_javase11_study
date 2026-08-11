@@ -1,7 +1,7 @@
 package com.javastudy.components.sankou_books.internal;
 
 import com.javastudy.components.sankou_books.internal.SankouBooksDB.SankouBooksColumn;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

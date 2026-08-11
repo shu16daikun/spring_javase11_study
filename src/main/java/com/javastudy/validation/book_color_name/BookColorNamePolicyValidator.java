@@ -16,7 +16,7 @@ package com.javastudy.validation.book_color_name;
 
 import com.javastudy.util.param.prop_key.PropKey.RegexProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.AllArgsConstructor;

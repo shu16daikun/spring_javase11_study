@@ -17,7 +17,7 @@ package com.javastudy.components.sankou_book_color.internal;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.util.param.prop_key.PropKey.RegexProp;
 import com.javastudy.util.param.validation_messages.ValidationMessageUtil;
-import com.util.type.MyType;
+import com.my.util.type.MyType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

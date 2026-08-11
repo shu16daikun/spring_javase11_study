@@ -14,15 +14,16 @@
 
 package com.javastudy.components.authority.internal;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import com.javastudy.components.authority.api.dto.ADMIN_AuthorityViewDto;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
 import com.javastudy.validation.authority_system_name.ValidAuthoritySystemName;
 import com.login.components.authority.api.dto.MyAuthorityInputDto;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -72,7 +73,8 @@ public class ADMIN_AuthorityForm {
 		final String name = RoleUtil.toDbRole(this.systemName);
 		return new MyAuthorityInputDto(
 			null,
-			this.trim(name));
+			this.trim(name),
+			1L);
 	}
 
 	/**
@@ -83,7 +85,8 @@ public class ADMIN_AuthorityForm {
 		final String name = RoleUtil.toDbRole(this.systemName);
 		return new MyAuthorityInputDto(
 			viewId,
-			this.trim(name));
+			this.trim(name),
+			1L);
 	}
 
 	/* ===== [public/protected] END ===== */

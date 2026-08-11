@@ -4,7 +4,7 @@ import com.javastudy.components.chapter.api.dto.ADMIN_ChapterInputDto;
 import com.javastudy.components.chapter.api.dto.ADMIN_ChapterViewDto;
 import com.javastudy.components.sankou_books.api.dto.ADMIN_SankouBooksViewDto;
 import com.javastudy.util.param.prop_key.PropKey.ErrorProp;
-import com.util.zero_padding.ZeroPadding;
+import com.my.util.zero_padding.ZeroPadding;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

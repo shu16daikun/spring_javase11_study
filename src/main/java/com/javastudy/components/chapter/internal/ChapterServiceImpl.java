@@ -22,9 +22,9 @@ import com.javastudy.components.kurohon_questions.api.service.KurohonQuestionsRe
 import com.javastudy.components.sankou_books.api.dto.ADMIN_SankouBooksViewDto;
 import com.javastudy.components.sankou_books.api.service.SankouBooksService;
 import com.javastudy.components.weakness.api.service.WeaknessRefLookUp;
-import com.util.security.id.DbIdSequence;
-import com.util.security.role.RoleUtil;
-import com.util.type.MyType;
+import com.my.util.security.id.DbIdSequence;
+import com.my.util.security.role.RoleUtil;
+import com.my.util.type.MyType;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

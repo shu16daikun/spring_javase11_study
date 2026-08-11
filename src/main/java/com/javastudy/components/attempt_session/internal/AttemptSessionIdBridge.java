@@ -1,6 +1,6 @@
 package com.javastudy.components.attempt_session.internal;
 
-import com.util.security.id.IdBridge;
+import com.my.util.security.id.IdBridge;
 
 final class AttemptSessionIdBridge {
 
